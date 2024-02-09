@@ -35,14 +35,14 @@ class block {
 }
 // các biến cho các viên bình thường 
 var star = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421316821_2352999254897558_8375811345163435152_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=510075&_nc_ohc=O5FUURn4WeoAX9W2QQ6&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSBW0UFmtiadJ7GuarUUpakgNge4ky3EzNyKP7uXb_TzQ&oe=65EBE62C'
-var yingyang = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421809701_762220595931845_8704852172982755247_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=510075&_nc_ohc=r-ppQ8ZqNZEAX9gj9E1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRcKuF7a7Wh0dagmI9ra4JE0eRYLux7p9zh62zfgP4tIQ&oe=65EBD782'
-var sword = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/413466115_1362946924340719_5660391729943672205_n.png?_nc_cat=108&ccb=1-7&_nc_sid=510075&_nc_eui2=AeHEiWxKXVd9SW_EUfkts6WyOxW-HxD0qak7Fb4fEPSpqfsQakeLRHSHxN_0lZdS4w86PVkDKuR1eBb1mxc3OtsJ&_nc_ohc=G8U3Rb3lL-0AX-15bUs&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRkeGn56wJPtSxkw0XjVzhyUrnpY3TLblDw60Igm29xQw&oe=65C3A9A0'
-var water = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/411019611_815782587019913_6541505757016858131_n.png?_nc_cat=101&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFyAt4juRnbweOjSyd9ivQCyGhgOjmkcPLIaGA6OaRw8t7Z2ArbXJIflqVssXdiLb9yBpPOPklIkjTfxvyX3Rrq&_nc_ohc=kFfABs56aisAX_47PPR&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQJSWowquSeXCWt6fb6jchDgMl44nXZaRZBH1rSxdkuTA&oe=65C38326'
-var heart = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/411123765_2126178954425450_6024970361687618085_n.png?_nc_cat=102&ccb=1-7&_nc_sid=510075&_nc_eui2=AeEZf-AHXm51KqKJom7F1uGSFiVFwQarLloWJUXBBqsuWlGDkB4n2gCD40zNhXs1_SzSI9_Nm0GG5wUpq1OkVtJa&_nc_ohc=ki_gTn4hcTgAX-_bf5m&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTxSSSnNhw4Y5QlTV7pMyiByc6VtBo7qKebyp0xXLM8qQ&oe=65C388B5'
+var yinyang = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421809701_762220595931845_8704852172982755247_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=510075&_nc_ohc=r-ppQ8ZqNZEAX9gj9E1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRcKuF7a7Wh0dagmI9ra4JE0eRYLux7p9zh62zfgP4tIQ&oe=65EBD782'
+var sword = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421292373_917466143332507_2840940062186481787_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=kloCkVnUQfgAX9WKgty&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTG8yTsTNVzQKkPb0KvCLn5qoLyY2HDHdKGX5jpu_eNAw&oe=65ED1785'
+var water = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421253279_1054123192323029_41222738282195189_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=510075&_nc_ohc=EvwHZnU0ddEAX-bF1OQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSiVzRSNaf0eR5W76LdvrUAvNIWOL5CzOKnmKrFHaf8Iw&oe=65ED28C9'
+var heart = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/419707477_766753945348888_9218392107092359341_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=510075&_nc_ohc=6TSlHQxnNIoAX9zAcSS&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTDNdaAp28nkb97Wmphhycrq666_Cp5E-0sccq1-OGA3Q&oe=65ED1602'
 var melon = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/411115202_1093865118414101_2848535251316015944_n.png?_nc_cat=107&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFJkE4r9uN9EiwFFT1CNEOA1T_6-6Ys0QLVP_r7pizRAryQy9j2zsbyXlvbzwuqu0FYyphbPkRbYyqN47gzzAhH&_nc_ohc=7eSuLHCSB9EAX-cwgjq&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQijKji0Kpzufe6KqusF9rfca5llaJ2kcC3WxoXf_vGgA&oe=65CA1360'
 var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
 //  var star = 'block/star.png';
-//  var yingyang = 'block/yingyang.png';
+//  var yinyang = 'block/yinyang.png';
 //  var sword = 'block/sword.png';
 //  var water = 'block/water.png';
 //  var heart = 'block/heart.png';
@@ -50,7 +50,7 @@ var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.
 // var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
 
 var star_block = [star, starNgang, starDoc, star3x3];
-var yingyang_block = [yingyang, yinyangNgang, yinyangDoc, yinyang3x3];
+var yinyang_block = [yinyang, yinyangNgang, yinyangDoc, yinyang3x3];
 
 var sword_block = [sword, swordNgang, swordDoc, sword3x3];
 var water_block = [water, waterNgang, waterDoc, water3x3];
@@ -67,7 +67,7 @@ var special_block = [starDoc, starNgang, star3x3,
     melonNgang, melonDoc, melon3x3,
     special];
 // biến tạo bàn cờ
-var chess = [star, yingyang, sword, water, heart, melon]
+var chess = [star, yinyang, sword, water, heart, melon]
 var board = [];
 var rows = 9;
 var columns = 9;
@@ -101,8 +101,8 @@ function startGame() {
             let tile = document.createElement("img");
             tile.src = randomCandy();
             switch(tile.src) {
-                case yingyang: {
-                    tile.className = "yingyang"
+                case yinyang: {
+                    tile.className = "yinyang"
                     break;
                 }
                 case melon: {
@@ -254,7 +254,7 @@ function check_special_effect() { // kiểm tra block đặc biệt kết hợp 
                 else {
                     switch (true) {
                         case star_block.indexOf(otherTile.src) != -1: rs = star_block; break;
-                        case yingyang_block.indexOf(otherTile.src) != -1: rs = yingyang_block; break;
+                        case yinyang_block.indexOf(otherTile.src) != -1: rs = yinyang_block; break;
                         case sword_block.indexOf(otherTile.src) != -1: rs = sword_block; break;
                         case water_block.indexOf(otherTile.src) != -1: rs = water_block; break;
                         case heart_block.indexOf(otherTile.src) != -1: rs = heart_block; break;
@@ -276,7 +276,7 @@ function check_special_effect() { // kiểm tra block đặc biệt kết hợp 
                 } else {
                     switch (true) {
                         case star_block.indexOf(currTile.src) != -1: rs = star_block; break;
-                        case yingyang_block.indexOf(currTile.src) != -1: rs = yingyang_block; break;
+                        case yinyang_block.indexOf(currTile.src) != -1: rs = yinyang_block; break;
                         case sword_block.indexOf(currTile.src) != -1: rs = sword_block; break;
                         case water_block.indexOf(currTile.src) != -1: rs = water_block; break;
                         case heart_block.indexOf(currTile.src) != -1: rs = heart_block; break;
@@ -391,7 +391,7 @@ function crushThree_V2() {
 }
 function group_block(block) {
     if (star_block.indexOf(block) != -1) return star_block;
-    if (yingyang_block.indexOf(block) != -1) return yingyang_block;
+    if (yinyang_block.indexOf(block) != -1) return yinyang_block;
     if (sword_block.indexOf(block) != -1) return sword_block;
     if (water_block.indexOf(block) != -1) return water_block;
     if (heart_block.indexOf(block) != -1) return heart_block;
@@ -537,7 +537,7 @@ function create_block4(array) {
         switch (array[0].src) {
             case star: src = starDoc; break;
             case sword: src = swordDoc; break;
-            case yingyang: src = yinyangDoc; break;
+            case yinyang: src = yinyangDoc; break;
             case water: src = waterDoc; break;
             case heart: src = heartDoc; break;
             case melon: src = melonDoc; break;
@@ -548,7 +548,7 @@ function create_block4(array) {
             switch (array[0].src) {
                 case star: src = starNgang; break;
                 case sword: src = swordNgang; break;
-                case yingyang: src = yinyangNgang; break;
+                case yinyang: src = yinyangNgang; break;
                 case water: src = waterNgang; break;
                 case heart: src = heartNgang; break;
                 case melon: src = melonNgang; break;
@@ -580,7 +580,7 @@ function create_block_5(array) {
         switch (array[0].src) {
             case star: src = star3x3; break;
             case sword: src = sword3x3; break;
-            case yingyang: src = yinyang3x3; break;
+            case yinyang: src = yinyang3x3; break;
             case water: src = water3x3; break;
             case heart: src = heart3x3; break;
             case melon: src = melon3x3; break;
