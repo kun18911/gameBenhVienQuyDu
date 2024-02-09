@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+       
+        <link rel="stylesheet" href="asset/css/style.css">
+
+    </head>
+
+
+    <style>
+       
+
+        #board img {
+            width: calc(100% / 9) ;
+            height: calc(100% / 9) ;
+        }
+
+        .focus {
+            border: calc((100% / 9) / 12) solid #14842f;
+            box-sizing: border-box;
+        }
+
+        .outFocus {
+            border: calc((100% / 9) / 12) solid #eb0808;
+            box-sizing: border-box;
+        }
+
+
+        @keyframes tangHinh {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                display: none
+            }
+        }
+
+        .clickAnimation {
+            animation-name: tangHinh;
+            animation-duration: 0.4s;
+            animation-iteration-count: 1;
+        }
+
+        .oppa0 {
+            opacity: 0;
+        }
+    </style>
+<body>
+<div class="body">
+    <div class="app" style="width: 97.24%; height: 98.454%;">
+        <!-- <div class="app2">
+        </div> -->
+
+     <div class="option timeMe">20s</div>
+        <div class="option timeEnemey">15s</div>
+    <div class="option petMe">PetMe</div>
+        <div class="option petEnemey">PetDemon</div>
+
+    <div class="option starMe">99</div>
+        <div class="option starEnemey">0</div>
+ <div class="option starMe1"></div>
+        <div class="option starEnemey1"></div>
+    
+            <div class="option hpMe">Hp: <span class="hpMe1">0</span>/<span class="hpMe2">0</span></div>
+            <div class="option hpEnemy">Hp: <span class="hpEnemy1">0</span>/<span class="hpEnemy2">0</span></div>
+
+    <div class="option manaMe" style="
+    line-height: 60px;
+    height: 60px;
+    min-width: 197px;
+    left: 11px;
+    bottom: 439px;
+    font-size: 34px;
+">Mana: <span class="manaMe1">0</span>/<span class="manaMe2">0</span></div>
+            <div class="option manaEnemy">Mana: <span class="manaEnemy1">0</span>/<span class="manaEnemy2">0</span></div>
+
+    
+        <div class="option lvMe">Lv: 8.20%</div>
+        <div class="option lvEnemey">Lv: 8.30%</div>
+
+        <div class="option GiapMe" style="
+    line-height: 60px;
+    height: 60px;
+    min-width: 197px;
+    right: 11px;
+    bottom: 309px;
+    font-size: 34px;
+">2000 X</div>
+        <div class="option GiapEnemey">30 000 X</div>
+        
+        <div id="board"></div>
+        <div class="option optionButton outGame">Đầu Hàng</div>
+        <div class="option optionButton Skill">Tùy Chọn</div>
+
+        <!-- <div class="option"><span class="namee">Tùy Chọn</span></div>
+        <div class="option"><span class="namee">Mục Tiêu</span></div> -->
+        
+        <!-- <div class="option optionLocation1">Chọn</div>
+        <div class="option optionLocation2">Đổi</div>
+        <div class="infor">
+            <div class="name">Tên nv: <span class="namee"></span></div>
+            <div class="name">Lv: <span class="namee"></span> + <span class="namee"></span>% </div>
+            <div class="namee">Vàng: <span class="namee"></span></div>
+            <div class="name">Kim cương: <span class="namee"></span></div>
+        </div> -->
+        
+    
+    
+        <!-- <div class="keyBoard">
+            <div onclick='moveTopButton()' class="phím-lên upKey focusKey">LÊN</div>
+            <div onclick='moveBottomButton()' class="phím-xuống downKey  focusKey">XUỐNG</div>
+            <div onclick='moveLeftButton()'  class="phím-trái leftKey focusKey">TRÁI</div>
+            <div onclick='moveRightButton()' class="phím-phải rightKey focusKey">PHẢI</div>
+            <div class="phím-ok js-nút-ok focusKey">OK</div>
+        </div> -->
+        
+    
+    <div class="bassicMap mapBassic" style="width: 620px; height: 900px; top: 0px; left: 0px;"></div><div class="meJs me" style="width: 14.817%;height: 13.4%;/* top: 0%; */bottom: 65px;left: 2%;background: none;"><div class="meSha meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/415736587_754339319384647_5030219501129618554_n.png?stp=dst-png_p206x206&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=S0CVj2Z4VFkAX_5NsfQ&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdQ_af9M562nI_8OYN7mDP0cZYgs-NdKOxQouQzncvM3uA&amp;oe=65EAEDAB&quot;) 80px 69px / 253px no-repeat;"></div></div><div class="mst1 me" style="width: 14.817%;height: 13.4%;top: 43%;left: 12%;background: none;display: none;"><div class="mstt1 meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=c3Q6JhZ40mMAX-kcuOF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&amp;oe=65EB24F2&quot;) 60px 61px / 279px no-repeat;"></div></div><div class="mst2 me" style="width: 14.817%;height: 13.4%;/* top: 67%; *//* left: 70%; */bottom: 65px;right: 2%;background: none;"><div class="mstt2 meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=c3Q6JhZ40mMAX-kcuOF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&amp;oe=65EB24F2&quot;) 60px 61px / 279px no-repeat;"></div></div><div class="mst3 me" style="width: 14.817%;height: 13.4%;top: 61%;display: none;left: 30%;background: none;"><div class="mstt3 meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=c3Q6JhZ40mMAX-kcuOF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&amp;oe=65EB24F2&quot;) 60px 61px / 279px no-repeat;"></div></div></div>
+</div>
+</body>
+<script src="asset/javascript/map.js"></script>
+
+<script src="asset/javascript/style.js"></script>
+<script src="asset/javascript/khoa.js"></script>
+<script src="asset/javascript/script.js"></script>
+</html>

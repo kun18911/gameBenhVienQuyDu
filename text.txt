@@ -1,0 +1,20 @@
+    this.backgroundImage = function (src, po,re,size) {  //hàm đổi màu nền
+        character.style.backgroundImage = src 
+        character.style.backgroundPosition = po 
+        character.style.backgroundRepeat = re 
+        character.style.backgroundSize = size 
+
+    }
+
+    this.class = function (nameClass) {  //hàm đổi màu nền
+        character.classList.add(nameClass)
+
+    }
+
+    this.backgroundColor = function (color) {  //hàm đổi màu nền
+        character.style.background = color
+    }
+   
+}
+var meSha = new Character2('meSha','meJs')
+meSha.backgroundColor("none")
