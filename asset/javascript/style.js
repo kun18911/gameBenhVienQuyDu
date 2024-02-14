@@ -1,5 +1,136 @@
 // 1. Hàm tạo nhân vật
+// function Characterr(name, top, left,width, height) {
+//     var character = document.createElement('div') // tạo nhân vật
+//     character.classList.add(name) //thêm class cho nhân vật 
+//     character.classList.add('me') //thêm class me, để có được css tạo sẵn
+//     this.height = height
+//     this.width = width
+//     this.class = name //gọi class
+//     // this.top = top
+//     // this.left = left"
+//     var fullclassApp = document.querySelector("." + oneMap[0].class) //gọi biến qua Dom
+//     fullclassApp.append(character); // chèn nhân vật vào dom trên
+
+
+//     character.style.width = width + 'px' //nhân vật có width là
+//     character.style.height = height + 'px' //nhân vật có height là
+//     this.class = name //dùng để truy xuất class của nhân vật
+//     this.background = function (color) {  //hàm đổi màu nền
+//         character.style.background = color
+//     }
+//     character.style.top = top + 'px' //nhân vật sẽ đứng ở ...
+//     character.style.left = left + 'px'
+
+//     // 2.1 hàm lấy giá trị top
+//     this.topp = function() {
+//         return Number(character.style.top.slice(0,-2))
+//     }
+//     // 2.2 hàm lấy giá trị left
+//     this.leftt = function() {
+//         return Number(character.style.left.slice(0,-2))
+//     }
+
+//     // 1.1 hàm tạo nút đi xuống
+//     this.moveBottom = function () {
+//         if (me.topp() < 1260 ) {
+//             top += 9
+//             this.top = top
+//             character.style.top = top + 'px'
+            
+//         } else if (me.topp() >= 1260  && Math.abs(bassicMap.topp()) <  bassicMap.height - heightScreen) {
+//             console.log('rớt')
+//             bassicMap.moveBottom()
+            
+//             if (Math.abs(bassicMap.topp()) >=  bassicMap.height - heightScreen) {
+//                 document.querySelector('.' + bassicMap.class).style.top = '-' + (bassicMap.height - heightScreen ) +'px'
+//             }
+
+//         } else {
+//             top += 9
+//             this.top = top
+//             character.style.top = top + 'px'
+//         }
+//     }
+//     // 1.2 hàm tạo nút đi lên
+//     this.moveTop = function () {
+//         if (me.topp() > 320) {
+//             top -= 9
+//             this.top = top
+//             character.style.top = top + 'px'
+            
+//         } else if (me.topp() <= 320 && bassicMap.topp() < 0) {
+//             console.log('rớt')
+//             bassicMap.moveTop()
+//             if (bassicMap.topp() >= 0) {
+//                 document.querySelector('.' + bassicMap.class).style.top = 0 + 'px'
+//             }
+
+
+//         } else {
+//             top -= 9
+//             this.top = top
+//             character.style.top = top + 'px'
+//         }
+//     }
+//     // 1.3 hàm tạo nút đi qua trái
+//     this.moveLeft = function () {
+//         if (me.leftt() >  140 ) {
+//             left -= 9
+//             this.left = left
+//             character.style.left = left + 'px'
+            
+//         } else if (me.leftt() <= 140  && bassicMap.leftt() < 0) {
+//             bassicMap.moveLeft()
+//             // console.log(bassicMap.leftt())
+//             if (bassicMap.leftt() >= 0) {
+//                 document.querySelector('.' + bassicMap.class).style.left = 0 + 'px'
+//             }
+
+
+//         } else {
+//             left -= 9
+//             this.left = left
+//             character.style.left = left + 'px'
+//         }
+//     }
+//     // 1.4 hàm tạo nút đi qua phải
+//     this.moveRight = function () {
+//         if (me.leftt() < 690) {
+//             left += 9
+//             character.style.left = left + 'px'
+            
+//         } else if (me.leftt() >= 690 && Math.abs(bassicMap.leftt()) <  bassicMap.width - widthScreen) {
+//             bassicMap.moveRight()
+//             for (var i = 0; i <= fullMap.length; i++) {
+//                 if (Math.abs(bassicMap.leftt()) >= fullMap[0].left - 690 - 160 && me.topp() + 260 > fullMap[0].top  && me.topp() < fullMap[0].top + fullMap[0].height ) {
+//                     clearInterval(id)
+//                 }
+//             }
+//             if (Math.abs(bassicMap.leftt()) >=  bassicMap.width - widthScreen) {
+//                 document.querySelector('.' + bassicMap.class).style.left = '-' + (bassicMap.width - widthScreen) + 'px'
+//             }
+
+
+//         } else {
+//             left += 9
+//             character.style.left = left + 'px'
+//         }
+//     }
+
+
+//     // 2.1 hàm lấy giá trị top
+//     this.top = function() {
+//         return Number(character.style.top.slice(0,-2))
+//     }
+//     // 2.2 hàm lấy giá trị left
+//     this.left = function() {
+//         return Number(character.style.left.slice(0,-2))
+//     }
+    
+// }
+
 function Character(name, top, left,width, height) {
+    
     var character = document.createElement('div') // tạo nhân vật
     character.classList.add(name) //thêm class cho nhân vật 
     character.classList.add('me') //thêm class me, để có được css tạo sẵn
@@ -7,123 +138,100 @@ function Character(name, top, left,width, height) {
     this.width = width
     this.class = name //gọi class
     // this.top = top
-    // this.left = left
-    var fullclassApp = document.querySelector(".app") //gọi biến qua Dom
+    // this.left = left"
+    var fullclassApp = document.querySelector("." + oneMap[0].class) //gọi biến qua Dom
     fullclassApp.append(character); // chèn nhân vật vào dom trên
 
 
-    character.style.width = width + '%' //nhân vật có width là
-    character.style.height = height + '%' //nhân vật có height là
+    character.style.width = width + 'px' //nhân vật có width là
+    character.style.height = height + 'px' //nhân vật có height là
     this.class = name //dùng để truy xuất class của nhân vật
     this.background = function (color) {  //hàm đổi màu nền
         character.style.background = color
     }
-    character.style.top = top + '%' //nhân vật sẽ đứng ở ...
-    character.style.left = left + '%'
+    character.style.top = top + 'px' //nhân vật sẽ đứng ở ...
+    character.style.left = left + 'px'
+
+    // 2.1 hàm lấy giá trị top
+    this.topp = function() {
+        return  Number(character.style.top.slice(0,-2))
+    }
+    // 2.2 hàm lấy giá trị left
+    this.leftt = function() {
+        return Number(character.style.left.slice(0,-2))
+    }
 
     // 1.1 hàm tạo nút đi xuống
     this.moveBottom = function () {
-        // if (top < Math.floor(heightScreen * 60 / 100)) {
-            top += 0.2577
+        
+            top += 9
             this.top = top
-            character.style.top = top + '%'
-            console.log(top)
-            
-        // } else if (top >= Math.floor(heightScreen * 60 / 100) && Math.abs(bassicMap.top) <  bassicMap.height - heightScreen) {
-        //     console.log('rớt')
-        //     bassicMap.moveBottom()
-        //     if (Math.abs(bassicMap.top) >=  bassicMap.height - heightScreen) {
-        //         document.querySelector('.' + bassicMap.class).style.top = '-' + (bassicMap.height - heightScreen) + '%'
-        //     }
-
-        // } else {
-        //     top += 0.2577
-        //     this.top = top
-        //     character.style.top = top + '%'
-        // }
+            character.style.top = top + 'px'
+            screenMeBottom()
+            for (var i = 0; i < fullMap.length; i++) {
+                
+                if (me.topp() +260 >= fullMap[i].top && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
+                    character.style.top = fullMap[i].top - 260 + 'px'
+                    clearInterval(id)
+                }
+            }
     }
     // 1.2 hàm tạo nút đi lên
     this.moveTop = function () {
-        // if (top > Math.floor(heightScreen * 30 / 100)) {
-            top -= 0.2577
+       
+            top -= 9
             this.top = top
-            character.style.top = top + '%'
-            console.log(top)
-            
-        // } else if (top <= Math.floor(heightScreen * 30 / 100) && bassicMap.top < 0) {
-        //     console.log('rớt')
-        //     bassicMap.moveTop()
-        //     if (bassicMap.top >= 0) {
-        //         document.querySelector('.' + bassicMap.class).style.top = 0 + 'px'
-        //     }
-
-
-        // } else {
-        //     top -= 5
-        //     this.top = top
-        //     character.style.top = top + 'px'
-        // }
+            character.style.top = top + 'px'
+            screenMeTop()
+            for (var i = 0; i < fullMap.length; i++) {
+                
+                if (me.topp() <= fullMap[i].top + fullMap[i].height && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
+                    character.style.top = fullMap[i].top + fullMap[i].height + 'px'
+                    clearInterval(id)
+                }
+            }
+         
     }
     // 1.3 hàm tạo nút đi qua trái
     this.moveLeft = function () {
-        // if (left > Math.floor(widthScreen * 30 / 100)) {
-            left -= 0.45 
+            left -= 9
             this.left = left
-            character.style.left = left + '%'
-            
-        // } else if (left <= Math.floor(widthScreen * 30 / 100) && bassicMap.left < 0) {
-        //     bassicMap.moveLeft()
-        //     if (bassicMap.left >= 0) {
-        //         document.querySelector('.' + bassicMap.class).style.left = 0 + 'px'
-        //     }
-
-
-        // } else {
-        //     left -= 5     
-        //     this.left = left
-        //     character.style.left = left + 'px'
-        // }
+            character.style.left = left + 'px'
+            screenMeLeft()
+            for (var i = 0; i < fullMap.length; i++) {
+                console.log(fullMap[i].leftt())
+                if (me.leftt() <= fullMap[i].left + fullMap[i].width && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
+                    character.style.left = fullMap[i].left + fullMap[i].width  + 'px'
+                    clearInterval(id)
+                }
+            }
+           
     }
     // 1.4 hàm tạo nút đi qua phải
     this.moveRight = function () {
-        // if (left < Math.floor(widthScreen * 60 / 100)) {
-            left += 0.45  
-            this.left = left
-            character.style.left = left + '%'
-            
-        // } else if (left >= Math.floor(widthScreen * 60 / 100) && Math.abs(bassicMap.left) <  bassicMap.width - widthScreen) {
-        //     bassicMap.moveRight()
-        //     if (Math.abs(bassicMap.left) >=  bassicMap.width - widthScreen) {
-        //         document.querySelector('.' + bassicMap.class).style.left = '-' + (bassicMap.width - widthScreen) + 'px'
-        //     }
-
-
-        // } else {
-        //     left += 5     
-        //     this.left = left
-        //     character.style.left = left + 'px'
-        // }
+            left += 9
+            character.style.left = left + 'px'
+            screenMeRight()
+            for (var i = 0; i < fullMap.length; i++) {
+                console.log(fullMap[i].leftt())
+                if (me.leftt() + 160 >= fullMap[i].leftt() && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
+                    character.style.left = fullMap[i].leftt() -160 + 'px'
+                    clearInterval(id)
+                }
+            }
     }
 
 
-    // 2.1 hàm lấy giá trị top
-    this.top = function() {
-        return Number(character.style.top.slice(0,-2))
-    }
-    // 2.2 hàm lấy giá trị left
-    this.left = function() {
-        return Number(character.style.left.slice(0,-2))
-    }
     
 }
 // 2. khai báo nhân vật và quái
 var id = 0 // dùng cho setInterval ở moveButton
-var me = new Character('meJs',0,0,14.817,13.4)
+var me = new Character('meJs',891,457,160,260)
 
 me.background('none')
-var monster1 = new Character('mst1',43,12,14.817,13.4)
-var monster2 = new Character('mst2',67,70,14.817,13.4)
-var monster3 = new Character('mst3',61,30,14.817,13.4)
+var monster1 = new Character('mst1',80,12,160,260)
+var monster2 = new Character('mst2',67,70,160,260)
+var monster3 = new Character('mst3',61,30,160,260)
 var fullMonster = [monster1, monster2, monster3]
 monster1.background('none')
 monster2.background('none')
@@ -203,6 +311,7 @@ function moveBottomButton() {
         // 3. cho setInterval để di chuyển auto
     id = setInterval(function() {
         if (move == false) {
+          
             me.moveBottom()
 
             // 4. lúc này nhấn nút lần 2, sẽ hủy di chuyển
@@ -214,8 +323,8 @@ function moveBottomButton() {
             }
             // 5. kiểm tra đụng đáy chưa
             // ps: sao ko ()
-            if (me.top >= y + 1) { move = true; 
-                document.querySelector("." + me.class).style.top = (y +1)+ '%'
+            if (me.topp() >= oneMap[0].height - me.height ) { move = true; 
+                document.querySelector("." + me.class).style.top = oneMap[0].height - me.height + 'px'
                 clearInterval(id)}
   
         }
@@ -247,8 +356,8 @@ function moveTopButton() {
             }
             // 5. kiểm tra đụng đỉnh chưa
             // ps: sao ko ()
-            if (me.top <= 0) { move = true; 
-                document.querySelector("." + me.class).style.top = 0 + '%'
+            if (me.topp() <= 0) { move = true; 
+                document.querySelector("." + me.class).style.top = 0 + 'px'
                 clearInterval(id)}
   
         }
@@ -280,7 +389,8 @@ function moveRightButton() {
             }
            
             // 5. kiểm tra đụng bên phải chưa
-            if (me.left >= z + 3) { move = true; document.querySelector('.' + me.class).style.left = (z +3 )+ '%'
+            
+            if (me.leftt() >= oneMap[0].width - me.width ) { move = true; document.querySelector('.' + me.class).style.left = oneMap[0].width - me.width + 'px'
             clearInterval(id)}
         }
     },25)
@@ -311,7 +421,7 @@ function moveLeftButton() {
             }
            
             // 5. kiểm tra đụng bên phải chưa
-            if (me.left <= 0) { move = true; document.querySelector('.' + me.class).style.left = 0 + '%'
+            if (me.leftt() <= 0) { move = true; document.querySelector('.' + me.class).style.left = 0 + 'px'
             clearInterval(id)}
         }
     },25)

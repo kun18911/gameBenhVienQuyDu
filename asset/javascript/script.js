@@ -75,17 +75,17 @@ var columns = 9;
 var currTile = undefined;
 var otherTile = undefined;
 
-// ----------------
-window.onload = function () {
-    startGame();
+// // ----------------
+// window.onload = function () {
+//     startGame();
 
-    // setTimeout(function () { runGame() }, 1000)
-    // //1/10th of a second
-    window.setInterval(function () {
+//     // setTimeout(function () { runGame() }, 1000)
+//     // //1/10th of a second
+//     window.setInterval(function () {
 
-    }, 200);
-    checkClass2();
-}
+//     }, 200);
+//     checkClass2();
+// }
 function randomCandy() {
     return chess[Math.floor(Math.random() * chess.length)]; //0 - 5.99
 }

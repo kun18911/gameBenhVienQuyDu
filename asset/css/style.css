@@ -6,7 +6,7 @@
 .app {
     width: 97.24%;
     height: 98.454%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     border: 2px solid slategray;
     top: 0.773%; bottom: 0.773%; left: 1.38%; right: 1.38%;
     position: absolute;
@@ -58,7 +58,7 @@ body {
 .body {
     width: 100%;
     height: 100%;
-    background-color: #6262c9;
+    /* background-color: #6262c9; */
     position: relative;
 
     
@@ -411,3 +411,6 @@ minhf{    width: 14.817%;
         bottom: 9px;
         font-size: 34px;
     }
+.ab {
+    position: absolute;
+}
