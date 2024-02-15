@@ -18,6 +18,9 @@ function Map(name, width, height, top, left) {
     mapp.style.top = top + 'px'
     mapp.style.left = left + 'px'
 
+    this.backgroundImage = function(xx) {
+        mapp.style.backgroundImage = url(xx)
+    }
     this.grossLeft = function(xx) {
         mapp.style.left = xx + 'px'
     }
@@ -266,8 +269,9 @@ function Character2(name,  nameDad) {
 var thisMap = thisMap1
 
 var thisMap1 = function() {
-    bassicMap = new Map('bassicMap', 3600, (1910 * 2),0,0)
-    bassicMap.backgroundColor('rgb(40 82 135 / 85%)')
+    bassicMap = new Map('bassicMap', 3600, 3820,0,0)
+    bassicMap.backgroundColor('none')
+    bassicMap.backgroundImage(asset/img/nền_map1.png)
     
        
        
