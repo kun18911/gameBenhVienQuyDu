@@ -44,9 +44,11 @@
 .wrap {
     width: 1080px;
     height: 1940px;
-    /* height: 1940px; */
+    overflow: hidden;
+    position: absolute;
 
 }
+
 .ch-Chess {
     transition: opacity 0.15s ease-out;
     opacity: 1;

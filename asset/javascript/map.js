@@ -119,6 +119,7 @@ function Map(name, width, height, top, left) {
 
 function MapItem(name, nameDad, text, width, height, top, left) {
     var mapp = document.createElement('div')
+    mapp.style.color = "white"
     mapp.classList.add(name)
     mapp.classList.add('exit')
     mapp.classList.add('ab')
