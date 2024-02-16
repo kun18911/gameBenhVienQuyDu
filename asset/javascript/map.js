@@ -19,7 +19,7 @@ function Map(name, width, height, top, left) {
     mapp.style.left = left + 'px'
 
     this.backgroundImage = function(xx) {
-        mapp.style.backgroundImage = url(xx)
+        mapp.style.backgroundImage = xx
     }
     this.grossLeft = function(xx) {
         mapp.style.left = xx + 'px'
@@ -235,6 +235,8 @@ var widthScreen = Number(document.querySelector(".app").style.width.slice(0,-2))
 var bassicMap
 var me
 var allItem
+var fullMap = []
+var positionMe = []
 
 function Character2(name,  nameDad) {
     var character = document.createElement('div') // tạo nhân vật
@@ -271,7 +273,7 @@ var thisMap = thisMap1
 var thisMap1 = function() {
     bassicMap = new Map('bassicMap', 3600, 3820,0,0)
     bassicMap.backgroundColor('none')
-    bassicMap.backgroundImage(asset/img/nền_map1.png)
+    bassicMap.backgroundImage("url('asset/img/nền_map1.png')")
     
        
        
@@ -286,32 +288,78 @@ var thisMap1 = function() {
 
         // itembassicMap1.backgroundColor('#c2a41e')
         // itembassicMap2.backgroundColor('#c2a41e')
-        var id = setInterval(function () {if (exit1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit1.left + exit1.width) <= 100 && exit1.top - (me.height + me.topp()) <= 100) {
-            document.querySelector(".aa").classList.remove("none")
-            document.querySelector(".aa").addEventListener("click", mami)
-            function mami() {
-                setTimeout(function() {
+        
+        var xy = function() {
+            console.log("hi")
+        }
+        var id = setInterval(function () {
 
-                    document.querySelector(".aa").classList.add("none")
-                    document.querySelector(".aa").removeEventListener("click", mami)
-                    clearInterval(id)
-    
-                    thisMap = thisMap2
-                    positionMe = [200, 900]
-                    document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-                    startMap()
-                },300)
+            if (exit1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit1.left + exit1.width) <= 100 && exit1.top - (me.height + me.topp()) <= 100 && me.topp() - exit1.top - exit1.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap2; 
+                positionMe = [200, 900];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
                 
             }
 
-        } else {document.querySelector(".aa").classList.add("none")}
-    },40)
+        } else if (exit2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit2.left + exit2.width) <= 100 && exit2.top - (me.height + me.topp()) <= 100 && me.topp() - exit2.top - exit2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap6
+                positionMe = [2150, 2100];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+            }
+        } else if (exit3.left - me.leftt() - me.width <= 100 && me.leftt() - (exit3.left + exit3.width) <= 100 && exit3.top - (me.height + me.topp()) <= 100 && me.topp() - exit3.top - exit3.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap3
+                positionMe = [200, 2500];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+            }
+        } else if (exit4.left - me.leftt() - me.width <= 100 && me.leftt() - (exit4.left + exit4.width) <= 100 && exit4.top - (me.height + me.topp()) <= 100 && me.topp() - exit4.top - exit4.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap4
+                positionMe = [1500, 3650];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+            }
+        } else if (exit5.left - me.leftt() - me.width <= 100 && me.leftt() - (exit5.left + exit5.width) <= 100 && exit5.top - (me.height + me.topp()) <= 100 && me.topp() - exit5.top - exit5.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap5
+                positionMe = [1400, 200];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+            }
+        }
+              
+            else {document.querySelector(".aa").classList.add("none")}
+    },100)
+
+    document.querySelector(".aa").addEventListener("click", mami)
+        function mami() {
+            clearInterval(id)
+            cancel = true
+            document.querySelector(".aa").removeEventListener("click", mami)
+            setTimeout(function() {
+                document.querySelector(".aa").classList.add("none")
+                xy()
+                startMap()
+            },500)
+            
+        }
         
-        document.querySelector(".exit2").addEventListener("click", function() {
-            thisMap = thisMap6
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+       
 
         document.querySelector(".exit3").addEventListener("click", function() {
             thisMap = thisMap3
@@ -331,6 +379,15 @@ var thisMap1 = function() {
         })
 
 
+        var itembassicMap1 = new MapItem('itembassicMap1', "bassicMap", '', 300, 450,700,1300)
+        var itembassicMap2 = new MapItem('itembassicMap2', "bassicMap", '', 300, 450,900,200)
+
+        fullMap = [itembassicMap1, itembassicMap2]
+
+        itembassicMap1.backgroundColor('#c2a41e')
+        itembassicMap2.backgroundColor('#c2a41e')
+
+
 }
 var thisMap2 = function() {
     bassicMap = new Map('bassicMap', 3600, 3200,0,0)
@@ -341,21 +398,58 @@ var thisMap2 = function() {
         exit5_2 = new MapItem('exit5_2', "bassicMap", "Cửa 5_2", 100, 100, 200, 2600)
         allItem = [exit1_1, exit3_2, exit5_2]
 
-        document.querySelector(".exit3_2").addEventListener("click", function() {
-            thisMap = thisMap3
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
-        document.querySelector(".exit1_1").addEventListener("click", function() {
-            thisMap = thisMap1
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
-        document.querySelector(".exit5_2").addEventListener("click", function() {
-            thisMap = thisMap5
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+        var xy = function() {
+            console.log("hi")
+        }
+        var id = setInterval(function () {
+
+            if (exit1_1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit1_1.left + exit1_1.width) <= 100 && exit1_1.top - (me.height + me.topp()) <= 100 && me.topp() - exit1_1.top - exit1_1.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap1; positionMe = [3550,2400];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+
+        } else if (exit5_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit5_2.left + exit5_2.width) <= 100 && exit5_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit5_2.top - exit5_2.eight <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap5; positionMe = [2250, 1800];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+        }
+         else if (exit3_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit3_2.left + exit3_2.width) <= 100 && exit3_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit3_2.top - exit3_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap3; positionMe = [1500, 3650];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+         }
+              
+            else {document.querySelector(".aa").classList.add("none")}
+    },100)
+
+    document.querySelector(".aa").addEventListener("click", mami)
+        function mami() {
+            clearInterval(id)
+            cancel = true
+            document.querySelector(".aa").removeEventListener("click", mami)
+            setTimeout(function() {
+                document.querySelector(".aa").classList.add("none")
+           
+                xy()
+                startMap()
+            },500)
+            
+        }
 
     
 }
@@ -369,22 +463,58 @@ var thisMap3 = function() {
         exit3_2 = new MapItem('exit3_2', "bassicMap", "Cửa 3_2", 100, 100,1500, 3650)
         allItem = [exit4_2, exit3_1, exit3_2]
 
-        document.querySelector(".exit3_1").addEventListener("click", function() {
-            thisMap = thisMap1
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+        var xy = function() {
+            console.log("hi")
+        }
+        var id = setInterval(function () {
 
-        document.querySelector(".exit3_2").addEventListener("click", function() {
-            thisMap = thisMap2
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
-        document.querySelector(".exit4_2").addEventListener("click", function() {
-            thisMap = thisMap4
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+            if (exit4_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit4_2.left + exit4_2.width) <= 100 && exit4_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit4_2.top - exit4_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap4; positionMe = [2200, 2000];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+
+        } else if (exit3_1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit3_1.left + exit3_1.width) <= 100 && exit3_1.top - (me.height + me.topp()) <= 100 && me.topp() - exit3_1.top - exit3_1.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap1; positionMe = [3550,1000];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+        }
+         else if (exit3_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit3_2.left + exit3_2.width) <= 100 && exit3_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit3_2.top - exit3_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap2; positionMe = [1500, 200];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+         }
+              
+            else {document.querySelector(".aa").classList.add("none")}
+    },100)
+
+    document.querySelector(".aa").addEventListener("click", mami)
+        function mami() {
+            clearInterval(id)
+            cancel = true
+            document.querySelector(".aa").removeEventListener("click", mami)
+            setTimeout(function() {
+                document.querySelector(".aa").classList.add("none")
+           
+                xy()
+                startMap()
+            },500)
+            
+        }
 
        
         
@@ -399,33 +529,58 @@ var thisMap4 = function() {
         exit4_2 = new MapItem('exit4_2', "bassicMap", "Cửa 4_2", 100, 100, 2200, 2000)
         allItem = [exit2_3, exit4_1, exit4_2]
 
-        // document.querySelector(".exit3_1").addEventListener("click", function() {
-        //     thisMap = thisMap1
-        //     document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-        //     startMap()
-        // })
+        var xy = function() {
+            console.log("hi")
+        }
+        var id = setInterval(function () {
 
-        // document.querySelector(".exit3_2").addEventListener("click", function() {
-        //     thisMap = thisMap2
-        //     document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-        //     startMap()
-        // })
-        document.querySelector(".exit2_3").addEventListener("click", function() {
-            thisMap = thisMap6
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+            if (exit2_3.left - me.leftt() - me.width <= 100 && me.leftt() - (exit2_3.left + exit2_3.width) <= 100 && exit2_3.top - (me.height + me.topp()) <= 100 && me.topp() - exit2_3.top - exit2_3.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap6; positionMe = [2150, 700];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
 
-        document.querySelector(".exit4_1").addEventListener("click", function() {
-            thisMap = thisMap1
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
-        document.querySelector(".exit4_2").addEventListener("click", function() {
-            thisMap = thisMap3
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+        } else if (exit4_1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit4_1.left + exit4_1.width) <= 100 && exit4_1.top - (me.height + me.topp()) <= 100 && me.topp() - exit4_1.top - exit4_1.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap1; positionMe = [1600,200];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+        }
+         else if (exit4_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit4_2.left + exit4_2.width) <= 100 && exit4_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit4_2.top - exit4_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap3; positionMe = [200, 1200];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+         }
+              
+            else {document.querySelector(".aa").classList.add("none")}
+    },100)
+
+    document.querySelector(".aa").addEventListener("click", mami)
+        function mami() {
+            clearInterval(id)
+            cancel = true
+            document.querySelector(".aa").removeEventListener("click", mami)
+            setTimeout(function() {
+                document.querySelector(".aa").classList.add("none")
+           
+                xy()
+                startMap()
+            },500)
+            
+        }
        
         
 }
@@ -438,22 +593,58 @@ var thisMap5 = function() {
         exit5_2 = new MapItem('exit5_2', "bassicMap", "Cửa 5_2", 100, 100, 2250, 1800)
         allItem = [exit2_2, exit5_1, exit5_2]
 
-        document.querySelector(".exit2_2").addEventListener("click", function() {
-            thisMap = thisMap6
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+         var xy = function() {
+            console.log("hi")
+        }
+        var id = setInterval(function () {
 
-        document.querySelector(".exit5_1").addEventListener("click", function() {
-            thisMap = thisMap1
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
-        document.querySelector(".exit5_2").addEventListener("click", function() {
-            thisMap = thisMap2
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+            if (exit2_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit2_2.left + exit2_2.width) <= 100 && exit2_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit2_2.top - exit2_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap6; positionMe = [2150, 3500]
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+
+        } else if (exit5_1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit5_1.left + exit5_1.width) <= 100 && exit5_1.top - (me.height + me.topp()) <= 100 && me.topp() - exit5_1.top - exit5_1.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap1; positionMe = [1600,3300]
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+        }
+         else if (exit5_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit5_2.left + exit5_2.width) <= 100 && exit5_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit5_2.top - exit5_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap2; positionMe = [200, 2600];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+         }
+              
+            else {document.querySelector(".aa").classList.add("none")}
+    },100)
+
+    document.querySelector(".aa").addEventListener("click", mami)
+        function mami() {
+            clearInterval(id)
+            cancel = true
+            document.querySelector(".aa").removeEventListener("click", mami)
+            setTimeout(function() {
+                document.querySelector(".aa").classList.add("none")
+           
+                xy()
+                startMap()
+            },500)
+            
+        }
        
         
 }
@@ -466,30 +657,76 @@ var thisMap6 = function() {
         exit2_2 = new MapItem('exit2_2', "bassicMap", "Cửa 2_2", 100, 100, 2150, 3500)
         allItem = [exit2_3, exit2_1, exit2_2]
 
-        document.querySelector(".exit2_3").addEventListener("click", function() {
-            thisMap = thisMap4
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
 
-        document.querySelector(".exit2_1").addEventListener("click", function() {
-            thisMap = thisMap1
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
-        document.querySelector(".exit2_2").addEventListener("click", function() {
-            thisMap = thisMap5
-            document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
-            startMap()
-        })
+
+
+
+        var xy = function() {
+            console.log("hi")
+        }
+        var id = setInterval(function () {
+
+            if (exit2_1.left - me.leftt() - me.width <= 100 && me.leftt() - (exit2_1.left + exit2_1.width) <= 100 && exit2_1.top - (me.height + me.topp()) <= 100 && me.topp() - exit2_1.top - exit2_1.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap1; positionMe = [200,1800];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+
+        } else if (exit2_2.left - me.leftt() - me.width <= 100 && me.leftt() - (exit2_2.left + exit2_2.width) <= 100 && exit2_2.top - (me.height + me.topp()) <= 100 && me.topp() - exit2_2.top - exit2_2.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap5; positionMe = [ 200, 1800];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+        }
+         else if (exit2_3.left - me.leftt() - me.width <= 100 && me.leftt() - (exit2_3.left + exit2_3.width) <= 100 && exit2_3.top - (me.height + me.topp()) <= 100 && me.topp() - exit2_3.top - exit2_3.height <= 100) {
+            document.querySelector(".aa").classList.remove("none")
+            xy = function() {  fullMap = [];thisMap = thisMap4; positionMe = [200, 2000];
+                screenMeLeft = []
+                screenMeRight = []
+                screenMeTop = []
+                screenMeBottom = []
+                
+            }
+         }
+              
+            else {document.querySelector(".aa").classList.add("none")}
+    },100)
+
+    document.querySelector(".aa").addEventListener("click", mami)
+        function mami() {
+            clearInterval(id)
+            cancel = true
+            document.querySelector(".aa").removeEventListener("click", mami)
+            setTimeout(function() {
+                document.querySelector(".aa").classList.add("none")
+           
+                xy()
+                startMap()
+            },500)
+            
+        }
+
+     
         
 }
 
-var positionMe = []
 var thisMap = thisMap1
+var screenMeLeft
+var screenMeRight
+var screenMeTop
+var screenMeBottom
 // document.querySelector(".body").classList.add("none")
 {/* <div class = "a"></div> */}
 startMap()
+var cancel = false
 function startMap() {
     thisMap()
     var oneMap = [bassicMap]
@@ -531,13 +768,14 @@ function startMap() {
                 top += 9
                 character.style.top = top + 'px'
                 screenMeBottom()
-                // for (var i = 0; i < fullMap.length; i++) {
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
                     
-                //     if (me.topp() +260 >= fullMap[i].top && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
-                //         character.style.top = fullMap[i].top - 260 + 'px'
-                //         move = true; clearInterval(id)
-                //     }
-                // }
+                    if (me.topp() + me.height >= fullMap[i].top && me.topp() < fullMap[i].top + fullMap[i].height && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
+                        character.style.top = fullMap[i].top - 260 + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
         }
         // 1.2 hàm tạo nút đi lên
         this.moveTop = function () {
@@ -546,13 +784,14 @@ function startMap() {
                 // this.top = top
                 character.style.top = top + 'px'
                 screenMeTop()
-                // for (var i = 0; i < fullMap.length; i++) {
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
                     
-                //     if (me.topp() <= fullMap[i].top + fullMap[i].height && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
-                //         character.style.top = fullMap[i].top + fullMap[i].height + 'px'
-                //         move = true; clearInterval(id)
-                //     }
-                // }
+                    if (me.topp() <= fullMap[i].top + fullMap[i].height && me.topp() > fullMap[i].top && me.topp() <= fullMap[i].top + fullMap[i].height && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
+                        character.style.top = fullMap[i].top + fullMap[i].height + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
              
         }
         // 1.3 hàm tạo nút đi qua trái
@@ -561,13 +800,14 @@ function startMap() {
                 left -= 9
                 character.style.left = left + 'px'
                 screenMeLeft()
-                // for (var i = 0; i < fullMap.length; i++) {
-                //     console.log(fullMap[i].leftt())
-                //     if (me.leftt() <= fullMap[i].left + fullMap[i].width && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
-                //         character.style.left = fullMap[i].left + fullMap[i].width  + 'px'
-                //         move = true; clearInterval(id)
-                //     }
-                // }
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
+                    console.log(fullMap[i].leftt())
+                    if (me.leftt() <= fullMap[i].left + fullMap[i].width && me.leftt() > fullMap[i].left && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
+                        character.style.left = fullMap[i].left + fullMap[i].width  + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
                
         }
         // 1.4 hàm tạo nút đi qua phải
@@ -576,13 +816,14 @@ function startMap() {
                 left += 9
                 character.style.left = left + 'px'
                 screenMeRight()
-                // for (var i = 0; i < fullMap.length; i++) {
-                //     // console.log(fullMap[i].leftt())
-                //     if (me.leftt() + 160 >= fullMap[i].leftt() && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
-                //         character.style.left = fullMap[i].leftt() -160 + 'px'
-                //         move = true; clearInterval(id)
-                //     }
-                // }
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
+                    // console.log(fullMap[i].leftt())
+                    if (me.leftt() + 160 >= fullMap[i].leftt() && me.leftt() < fullMap[i].left + fullMap[i].width && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
+                        character.style.left = fullMap[i].leftt() -160 + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
         }
     
     
@@ -593,6 +834,47 @@ function startMap() {
     } else {
         me = new Character('meJs',positionMe[0],positionMe[1],160,260)
     }
+    
+    // Hàm căn giữa camera
+
+        screenMeLeft = function() {
+        var x = me.leftt()
+        var y = me.topp()
+        if (oneMap[0].width - x - me.width >= 460) {
+            if (x - 460 >= 0)  {
+                oneMap[0].grossLeft(-(x - 460))
+            } else if (x - 460 < 0) { oneMap[0].grossLeft(0)}
+        }
+        }
+    
+        screenMeRight = function() {
+        var x = me.leftt()
+        var y = me.topp()
+        if (x - 460 >= 0) {
+            if (oneMap[0].width - x - me.width >= 460) {  oneMap[0].grossLeft(-(x - 460))} else 
+            if (oneMap[0].width - x - me.width < 460) { oneMap[0].grossLeft(-(oneMap[0].width - 1080))} 
+        }
+        }
+    
+        screenMeTop = function() {
+        var x = me.leftt()
+        var y = me.topp()
+        if (oneMap[0].height - y - me.height >= 840) {
+    
+            if (y - 840 >= 0)  {
+                oneMap[0].grossTop(-(y - 840))
+            } else if (y - 840 < 0) { oneMap[0].grossTop(0)}
+        }
+        }
+    
+        screenMeBottom = function() {
+        var x = me.leftt()
+        var y = me.topp()
+        if (y - 840 >= 0) {
+            if (oneMap[0].height - y - me.height >= 840) {  oneMap[0].grossTop(-(y - 840))} else 
+            if (oneMap[0].height - y - me.height < 840) { oneMap[0].grossTop(-(oneMap[0].height - 1940))} 
+        }
+        }
     me.background('none')
     screenMeLeft()
     screenMeTop()
@@ -741,46 +1023,6 @@ function startMap() {
 
 
 
-    // Hàm căn giữa camera
-
-    function screenMeLeft() {
-    var x = me.leftt()
-    var y = me.topp()
-    if (oneMap[0].width - x - me.width >= 460) {
-        if (x - 460 >= 0)  {
-            oneMap[0].grossLeft(-(x - 460))
-        } else if (x - 460 < 0) { oneMap[0].grossLeft(0)}
-    }
-    }
-
-    function screenMeRight() {
-    var x = me.leftt()
-    var y = me.topp()
-    if (x - 460 >= 0) {
-        if (oneMap[0].width - x - me.width >= 460) {  oneMap[0].grossLeft(-(x - 460))} else 
-        if (oneMap[0].width - x - me.width < 460) { oneMap[0].grossLeft(-(oneMap[0].width - 1080))} 
-    }
-    }
-
-    function screenMeTop() {
-    var x = me.leftt()
-    var y = me.topp()
-    if (oneMap[0].height - y - me.height >= 840) {
-
-        if (y - 840 >= 0)  {
-            oneMap[0].grossTop(-(y - 840))
-        } else if (y - 840 < 0) { oneMap[0].grossTop(0)}
-    }
-    }
-
-    function screenMeBottom() {
-    var x = me.leftt()
-    var y = me.topp()
-    if (y - 840 >= 0) {
-        if (oneMap[0].height - y - me.height >= 840) {  oneMap[0].grossTop(-(y - 840))} else 
-        if (oneMap[0].height - y - me.height < 840) { oneMap[0].grossTop(-(oneMap[0].height - 1940))} 
-    }
-    }
 
 
     // Phần hình ảnh nhân vật
@@ -792,7 +1034,15 @@ var meSha = new Character2('meSha','meJs')
 meSha.backgroundColor("none")
 meSha.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/415736587_754339319384647_5030219501129618554_n.png?stp=dst-png_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=510075&_nc_ohc=S0CVj2Z4VFkAX_5NsfQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQ_af9M562nI_8OYN7mDP0cZYgs-NdKOxQouQzncvM3uA&oe=65EAEDAB')", '80px 69px', 'no-repeat','253px',
 'meMe')
-
-
+    
+    var ud = setInterval(function() {if (cancel == true) {cancel = false;
+         clearInterval(ud); 
+         document.querySelector(".upKey").removeEventListener('click', moveTopButton)
+         document.querySelector(".downKey").removeEventListener('click', moveBottomButton)
+     
+         document.querySelector(".rightKey").removeEventListener('click', moveRightButton)
+         document.querySelector(".leftKey").removeEventListener('click', moveLeftButton)
+         document.querySelector(".bassicMap").parentNode.removeChild(document.querySelector(".bassicMap"))
+        }},100)
    
 }
