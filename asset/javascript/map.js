@@ -159,65 +159,6 @@ function MapItem(name, nameDad, text, width, height, top, left) {
     }
 }
 
-// function MapItem(name, top, left) {
-//     var mapp = document.createElement('div')
-//     mapp.classList.add(name)
-//     mapp.classList.add('exit')
-//     mapp.classList.add('ab')
-//     var fullclassApp = document.querySelector(".wrap") //gọi biến qua Dom
-//     fullclassApp.append(mapp); // chèn nhân vật vào dom trên
-  
-//     // gọi class height ...
- 
-//     this.class = name
-//     this.top = top
-//     this.left = left
-//     //  2.1 hàm lấy giá trị top
-//     this.topp = function() {
-//         return Number(mapp.style.top.slice(0,-2))
-//     }
-//     // 2.2 hàm lấy giá trị left
-//     this.leftt = function() {
-//         return Number(mapp.style.left.slice(0,-2))
-//     }
-
-//     // xác định vị trí
-
-//     mapp.style.top = top + 'px'
-//     mapp.style.left = left + 'px'
-
-   
-//     this.backgroundColor = function(color) {
-//         mapp.style.backgroundColor = color
-         
-//     }
-//     this.position = function(color) {
-//         mapp.classList.add(color) 
-         
-//     }
-// }
-// var b = new MapItem("hi", 3600, 200)
-
-// đặt biến cho các map
-// var itembassicMap1 = new MapItem('itembassicMap1', "bassicMap", 300, 450,700,1300)
-// var itembassicMap2 = new MapItem('itembassicMap2', "bassicMap", 300, 450,900,200)
-
-// var exit1 = new MapItem('exit1', "bassicMap", 100, 100,3550,2400)
-// var exit2 = new MapItem('exit2', "bassicMap", 100, 100,200,1800)
-// var exit3 = new MapItem('exit3', "bassicMap", 100, 100,3550,1000)
-// var exit4 = new MapItem('exit4', "bassicMap", 100, 100,1600,200)
-// var exit5 = new MapItem('exit5', "bassicMap", 100, 100,1600,3300)
-// // var fullMap = [itembassicMap1]
-// var fullMap = [itembassicMap1, itembassicMap2]
-// // var basiMapwidth = bassicMap.width
-// bassicMap.backgroundColor('#9f00ff52')
-// itembassicMap1.backgroundColor('#c2a41e')
-// itembassicMap2.backgroundColor('#c2a41e')
-// exit1.backgroundColor('black')
-// exit2.backgroundColor('black')
-// exit3.backgroundColor('black')
-// exit4.backgroundColor('black')
-// exit5.backgroundColor('black')
 
 
 document.querySelector(".app").style.width = '1050px'
@@ -275,6 +216,106 @@ var thisMap1 = function() {
     bassicMap = new Map('bassicMap', 3600, 3820,0,0)
     bassicMap.backgroundColor('none')
     bassicMap.backgroundImage("url('asset/img/nền_map1.png')")
+    function Character(name, width, height, top, left) {
+    
+        var character = document.createElement('div') // tạo nhân vật
+        character.classList.add(name) //thêm class cho nhân vật 
+        character.classList.add('me') //thêm class me, để có được css tạo sẵn
+
+        this.height = height
+        this.width = width
+        this.class = name //gọi class
+        // this.top = top
+        // this.left = left"
+        var fullclassApp = document.querySelector("." + bassicMap.class) //gọi biến qua Dom
+        fullclassApp.append(character); // chèn nhân vật vào dom trên
+    
+    
+        character.style.width = width + 'px' //nhân vật có width là
+        character.style.height = height + 'px' //nhân vật có height là
+        this.class = name //dùng để truy xuất class của nhân vật
+        this.background = function (color) {  //hàm đổi màu nền
+            character.style.background = color
+        }
+        character.style.top = top + 'px' //nhân vật sẽ đứng ở ...
+        character.style.left = left + 'px'
+    
+        // 2.1 hàm lấy giá trị top
+        this.topp = function() {
+            return  Number(character.style.top.slice(0,-2))
+        }
+        // 2.2 hàm lấy giá trị left
+        this.leftt = function() {
+            return Number(character.style.left.slice(0,-2))
+        }
+    
+        // 1.1 hàm tạo nút đi xuống
+        this.moveBottom = function () {
+                top = this.topp()
+                top += 9
+                character.style.top = top + 'px'
+                screenMeBottom()
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
+                    
+                    if (me.topp() + me.height >= fullMap[i].top && me.topp() < fullMap[i].top + fullMap[i].height && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
+                        character.style.top = fullMap[i].top - 260 + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
+        }
+        // 1.2 hàm tạo nút đi lên
+        this.moveTop = function () {
+                top = this.topp()
+                top -= 9
+                // this.top = top
+                character.style.top = top + 'px'
+                screenMeTop()
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
+                    
+                    if (me.topp() <= fullMap[i].top + fullMap[i].height && me.topp() > fullMap[i].top && me.topp() <= fullMap[i].top + fullMap[i].height && me.leftt() +160 > fullMap[i].left && me.leftt()  < fullMap[i].left + fullMap[i].width) {
+                        character.style.top = fullMap[i].top + fullMap[i].height + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
+             
+        }
+        // 1.3 hàm tạo nút đi qua trái
+        this.moveLeft = function () {
+                left = this.leftt()
+                left -= 9
+                character.style.left = left + 'px'
+                screenMeLeft()
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
+                    console.log(fullMap[i].leftt())
+                    if (me.leftt() <= fullMap[i].left + fullMap[i].width && me.leftt() > fullMap[i].left && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
+                        character.style.left = fullMap[i].left + fullMap[i].width  + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
+               
+        }
+        // 1.4 hàm tạo nút đi qua phải
+        this.moveRight = function () {
+                left = this.leftt()
+                left += 9
+                character.style.left = left + 'px'
+                screenMeRight()
+                if (fullMap.length != 0) {
+                for (var i = 0; i < fullMap.length; i++) {
+                    // console.log(fullMap[i].leftt())
+                    if (me.leftt() + 160 >= fullMap[i].leftt() && me.leftt() < fullMap[i].left + fullMap[i].width && me.topp() +260 > fullMap[i].topp() && me.topp() < fullMap[i].topp() + fullMap[i].height) {
+                        character.style.left = fullMap[i].leftt() -160 + 'px'
+                        move = true; clearInterval(id)
+                    }
+                }}
+        }
+    
+    
+        
+    }
     
        
        
@@ -284,6 +325,18 @@ var thisMap1 = function() {
         var exit4 = new MapItem('exit4', "bassicMap", "Cửa 4", 100, 100,1600,200)
         var exit5 = new MapItem('exit5', "bassicMap", "Cửa 5", 100, 100,1600,3300)
         allItem = [exit1,exit2,exit3,exit4,exit5]
+
+
+        var monster1 = new Character('monster', 160, 260,3550,2400)
+        var monster2 = new Character('monster', 160, 260,200,1800)
+        var monster3 = new Character('monster', 160, 260,3550,1000)
+        var monster4 = new Character('monster', 160, 260,1600,200)
+        var monster5 = new Character('monster', 160, 260,1600,3300)
+        var monster6 = new Character('monster', 160, 260,3550,2400)
+        var monster7 = new Character('monster', 160, 260,200,1800)
+        var monster8 = new Character('monster', 160, 260,3550,1000)
+        var monster9 = new Character('monster', 160, 260,1600,200)
+        var monster10 = new Character('monster', 160, 260,1600,3300)
 
         // bassicMap.backgroundColor('#9f00ff52')
 
