@@ -1,72 +1,105 @@
-<div class="body">
-        <div class="app" style="width: 97.24%; height: 98.454%;">
-            <!-- <div class="app2">
-            </div> -->
-    
-         <!-- <div class="option timeMe">20s</div>
-            <div class="option timeEnemey">15s</div>
-        <div class="option petMe">PetMe</div>
-            <div class="option petEnemey">PetDemon</div>
-    
-        <div class="option starMe">99</div>
-            <div class="option starEnemey">0</div>
-     <div class="option starMe1"></div>
-            <div class="option starEnemey1"></div>
-        
-                <div class="option hpMe">Hp: <span class="hpMe1">0</span>/<span class="hpMe2">0</span></div>
-                <div class="option hpEnemy">Hp: <span class="hpEnemy1">0</span>/<span class="hpEnemy2">0</span></div>
-    
-        <div class="option manaMe" style="
-        line-height: 60px;
-        height: 60px;
-        min-width: 197px;
-        left: 11px;
-        bottom: 439px;
-        font-size: 34px;
-    ">Mana: <span class="manaMe1">0</span>/<span class="manaMe2">0</span></div>
-                <div class="option manaEnemy">Mana: <span class="manaEnemy1">0</span>/<span class="manaEnemy2">0</span></div>
-    
-        
-            <div class="option lvMe">Lv: 8.20%</div>
-            <div class="option lvEnemey">Lv: 8.30%</div>
-    
-            <div class="option GiapMe" style="
-        line-height: 60px;
-        height: 60px;
-        min-width: 197px;
-        right: 11px;
-        bottom: 309px;
-        font-size: 34px;
-    ">2000 X</div>
-            <div class="option GiapEnemey">30 000 X</div>
+var numberChange = []
+setInterval(function() { 
+        if (MonsterArray[0].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[0].leftt() + MonsterArray[0].width) <= 200 && MonsterArray[0].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[0].topp() - MonsterArray[0].height <= 200) {
+                document.querySelector(".ac").classList.remove("none")
+                document.querySelector(".ad").classList.remove("none")
+                document.querySelector(".acc").innerHTML = MonsterArray[0].number
+                numberChange.push(MonsterArray[0].number)
+                
+                
+        } 
+          if (MonsterArray[1].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[1].leftt() + MonsterArray[1].width) <= 200 && MonsterArray[1].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[1].topp() - MonsterArray[1].height <= 200) {
+            document.querySelector(".ac").classList.remove("none")
+            document.querySelector(".ad").classList.remove("none")
+            document.querySelector(".acc").innerHTML = MonsterArray[1].number
+                numberChange.push(MonsterArray[1].number)
             
-            <div id="board"></div>
-            <div class="option optionButton outGame">Đầu Hàng</div>
-            <div class="option optionButton Skill">Tùy Chọn</div> -->
+    } 
+      if (MonsterArray[2].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[2].leftt() + MonsterArray[2].width) <= 200 && MonsterArray[2].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[2].topp() - MonsterArray[2].height <= 200) {
+        document.querySelector(".ac").classList.remove("none")
+        document.querySelector(".ad").classList.remove("none")
+        document.querySelector(".acc").innerHTML = MonsterArray[2].number
+        numberChange.push(MonsterArray[2].number)
+               
+        
+} 
+  if (MonsterArray[3].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[3].leftt() + MonsterArray[3].width) <= 200 && MonsterArray[3].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[3].topp() - MonsterArray[3].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[3].number
+    numberChange.push(MonsterArray[3].number)
+                
     
-            <!-- <div class="option"><span class="namee">Tùy Chọn</span></div>
-            <div class="option"><span class="namee">Mục Tiêu</span></div> -->
-            
-            <div class="option optionLocation1">Chọn</div>
-            <div class="option optionLocation2">Đổi</div>
-            <div class="infor">
-                <div class="name">Tên nv: <span class="namee"></span></div>
-                <div class="name">Lv: <span class="namee"></span> + <span class="namee"></span>% </div>
-                <div class="namee">Vàng: <span class="namee"></span></div>
-                <div class="name">Kim cương: <span class="namee"></span></div>
-            </div>
-            
-        
-        
-            <div class="keyBoard">
-                <div class="phím-lên upKey focusKey">LÊN</div>
-                <div class="phím-xuống downKey  focusKey">XUỐNG</div>
-                <div class="phím-trái leftKey focusKey">TRÁI</div>
-                <div class="phím-phải rightKey focusKey">PHẢI</div>
-                <div class="phím-ok js-nút-ok focusKey">OK</div>
-            </div> 
-            
-        
-        <!-- <div class="bassicMap mapBassic" style="width: 620px; height: 900px; top: 0px; left: 0px;"></div><div class="meJs me" style="width: 14.817%;height: 13.4%;/* top: 0%; */bottom: 65px;left: 2%;background: none;"><div class="meSha meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/415736587_754339319384647_5030219501129618554_n.png?stp=dst-png_p206x206&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=S0CVj2Z4VFkAX_5NsfQ&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdQ_af9M562nI_8OYN7mDP0cZYgs-NdKOxQouQzncvM3uA&amp;oe=65EAEDAB&quot;) 80px 69px / 253px no-repeat;"></div></div><div class="mst1 me" style="width: 14.817%;height: 13.4%;top: 43%;left: 12%;background: none;display: none;"><div class="mstt1 meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=c3Q6JhZ40mMAX-kcuOF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&amp;oe=65EB24F2&quot;) 60px 61px / 279px no-repeat;"></div></div><div class="mst2 me" style="width: 14.817%;height: 13.4%;/* top: 67%; *//* left: 70%; */bottom: 65px;right: 2%;background: none;"><div class="mstt2 meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=c3Q6JhZ40mMAX-kcuOF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&amp;oe=65EB24F2&quot;) 60px 61px / 279px no-repeat;"></div></div><div class="mst3 me" style="width: 14.817%;height: 13.4%;top: 61%;display: none;left: 30%;background: none;"><div class="mstt3 meMe" style="background: url(&quot;https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&amp;_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=510075&amp;_nc_ohc=c3Q6JhZ40mMAX-kcuOF&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&amp;oe=65EB24F2&quot;) 60px 61px / 279px no-repeat;"></div></div></div> -->
-    </div>
-</div>
+} 
+  if (MonsterArray[4].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[4].leftt() + MonsterArray[4].width) <= 200 && MonsterArray[4].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[4].topp() - MonsterArray[4].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[4].number
+    numberChange.push(MonsterArray[4].number)
+    
+} 
+  if (MonsterArray[5].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[5].leftt() + MonsterArray[5].width) <= 200 && MonsterArray[5].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[5].topp() - MonsterArray[5].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[5].number
+    numberChange.push(MonsterArray[5].number)
+    
+} 
+  if (MonsterArray[6].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[6].leftt() + MonsterArray[6].width) <= 200 && MonsterArray[6].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[6].topp() - MonsterArray[6].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[6].number
+    numberChange.push(MonsterArray[6].number)
+    
+} 
+  if (MonsterArray[7].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[7].leftt() + MonsterArray[7].width) <= 200 && MonsterArray[7].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[7].topp() - MonsterArray[7].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[7].number
+    numberChange.push(MonsterArray[7].number)
+    
+} 
+  if (MonsterArray[8].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[8].leftt() + MonsterArray[8].width) <= 200 && MonsterArray[8].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[8].topp() - MonsterArray[8].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[8].number
+    numberChange.push(MonsterArray[8].number)
+    
+} 
+  if (MonsterArray[9].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[9].leftt() + MonsterArray[9].width) <= 200 && MonsterArray[9].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[9].topp() - MonsterArray[9].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[9].number
+    numberChange.push(MonsterArray[9].number)
+    
+}
+
+if (numberChange.length == 0){ document.querySelector(".ac").classList.add("none")
+document.querySelector(".ad").classList.add("none")
+} else {
+    for (var i = 0; i < numberChange.length; i++) {
+        document.querySelector(".acc").innerHTML = numberChange[i]
+    }
+}
+
+},100)
+
+document.querySelector(".ad").addEventListener("click", mami)
+function mami() {
+    var n = 0
+    var y = Number(document.querySelector(".acc").innerHTML)
+
+
+
+    for (var i = 0; i < numberChange.length; i++) {
+        if (numberChange[i] == y) {
+            if (i + 1 <= numberChange.length - 1) {
+
+                document.querySelector(".acc").innerHTML = numberChange[i + 1]
+            } else if (i + 1 > numberChange.length - 1) {
+                document.querySelector(".acc").innerHTML = 0
+
+            }
+        }
+    }
+}

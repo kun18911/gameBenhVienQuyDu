@@ -1,3 +1,6 @@
+
+
+/// Các biến cho viên đặc biệt
 var melonNgang = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/415993670_769521041900568_2442095872604535659_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFMOPwPax4wsjeTxGgGxBxZNaYehiZIgrQ1ph6GJkiCtO-3kTPRPjOqJo6p4N67lwczysveVFl3yg-UhfqJ-EDw&_nc_ohc=9MLuVr3M17YAX-2R2LW&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSCG42qDfy-dXuRlMBPNWLvHbiFzfDATZQ_PCfymIgRNw&oe=65DFD24E'
 var melonDoc = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/415666478_2381529852032691_4816161594463510263_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=510075&_nc_eui2=AeGC7oXGUnJo0-a9QDXEL8u3VWAjC5WjDIlVYCMLlaMMiQfddsD3EWFctpmacj8QTK-ahllmV-7cKhCBmrsmBxav&_nc_ohc=mlmsYeZ1i5cAX_v-up9&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSaXAfGvUzeCJXbgSyazEGCDHZxDfOV2pJX9W4BtGfc9w&oe=65DFD06A'
 
@@ -25,6 +28,21 @@ var star3x3 = 'https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.15752-9/420550326_227
 var water3x3 = 'https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.15752-9/416038977_839885894494298_8979224047729924987_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=510075&_nc_ohc=lOb4iv8XZywAX_g_GuJ&_nc_ht=scontent.fsgn2-6.fna&oh=03_AdQVi3R3hpYW1NJr5PIEgBk9MDTbQ2XSRU3sqlBt-CFloQ&oe=65E3D737'
 // các biến cho các viên bình thường 
 var special = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/415779252_1687735858419026_1279514988863500876_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=510075&_nc_ohc=SxeoFnD9X1EAX-m6hr6&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRdIIyjqU_qOKrLVLTbPh7nuEi3FnLjNFgbY3qnvw6Z8Q&oe=65E3AB82';
+
+
+var block = class { constructor(name, src) {
+    this.name = name;
+    this.src = src;
+}}
+
+// các biến cho các viên bình thường 
+// var star = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421316821_2352999254897558_8375811345163435152_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=510075&_nc_ohc=O5FUURn4WeoAX9W2QQ6&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSBW0UFmtiadJ7GuarUUpakgNge4ky3EzNyKP7uXb_TzQ&oe=65EBE62C'
+// var yingyang = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/421809701_762220595931845_8704852172982755247_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=510075&_nc_ohc=r-ppQ8ZqNZEAX9gj9E1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRcKuF7a7Wh0dagmI9ra4JE0eRYLux7p9zh62zfgP4tIQ&oe=65EBD782'
+// var sword = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/413466115_1362946924340719_5660391729943672205_n.png?_nc_cat=108&ccb=1-7&_nc_sid=510075&_nc_eui2=AeHEiWxKXVd9SW_EUfkts6WyOxW-HxD0qak7Fb4fEPSpqfsQakeLRHSHxN_0lZdS4w86PVkDKuR1eBb1mxc3OtsJ&_nc_ohc=G8U3Rb3lL-0AX-15bUs&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdRkeGn56wJPtSxkw0XjVzhyUrnpY3TLblDw60Igm29xQw&oe=65C3A9A0'
+// var water = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/411019611_815782587019913_6541505757016858131_n.png?_nc_cat=101&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFyAt4juRnbweOjSyd9ivQCyGhgOjmkcPLIaGA6OaRw8t7Z2ArbXJIflqVssXdiLb9yBpPOPklIkjTfxvyX3Rrq&_nc_ohc=kFfABs56aisAX_47PPR&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQJSWowquSeXCWt6fb6jchDgMl44nXZaRZBH1rSxdkuTA&oe=65C38326'
+// var heart = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/411123765_2126178954425450_6024970361687618085_n.png?_nc_cat=102&ccb=1-7&_nc_sid=510075&_nc_eui2=AeEZf-AHXm51KqKJom7F1uGSFiVFwQarLloWJUXBBqsuWlGDkB4n2gCD40zNhXs1_SzSI9_Nm0GG5wUpq1OkVtJa&_nc_ohc=ki_gTn4hcTgAX-_bf5m&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTxSSSnNhw4Y5QlTV7pMyiByc6VtBo7qKebyp0xXLM8qQ&oe=65C388B5'
+// var melon = 'https://scontent.xx.fbcdn.net/v/t1.15752-9/411115202_1093865118414101_2848535251316015944_n.png?_nc_cat=107&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFJkE4r9uN9EiwFFT1CNEOA1T_6-6Ys0QLVP_r7pizRAryQy9j2zsbyXlvbzwuqu0FYyphbPkRbYyqN47gzzAhH&_nc_ohc=7eSuLHCSB9EAX-cwgjq&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQijKji0Kpzufe6KqusF9rfca5llaJ2kcC3WxoXf_vGgA&oe=65CA1360'
+// var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
 var star = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/star.png?raw=true'
 var yingyang = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/yingyang.png?raw=true'
 var sword = 'https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/sword.png?raw=true'
@@ -41,9 +59,7 @@ var water_block = [water, waterNgang, waterDoc, water3x3];
 var heart_block = [heart, heartNgang, heartDoc, heart3x3];
 var melon_block = [melon, melonNgang, melonDoc, melon3x3];
 
-var effect_ngang = [starNgang, yinyangNgang, swordNgang, waterNgang, heartNgang, melonNgang];
-var effect_doc = [starDoc, yinyangDoc, swordDoc, waterDoc, heartDoc, melonDoc];
-var effect_3x3 = [star3x3, yinyang3x3, sword3x3, water3x3, heart3x3, melon3x3];
+
 
 var special_block = [starDoc, starNgang, star3x3,
     yinyangNgang, yinyangDoc, yinyang3x3,
@@ -60,20 +76,23 @@ var columns = 9;
 // var score = 0;
 var currTile = undefined;
 var otherTile = undefined;
-var P1, P2
+
 // ----------------
-// // ----------------
- function ny() {
+ function baby()  {
     startGame();
 
     // setTimeout(function () { runGame() }, 1000)
     // //1/10th of a second
+
     slideCandy();
 }
+function randomCandy() {
+    return chess[Math.floor(Math.random() * chess.length)]; //0 - 5.99
+}
+
 function startGame() {
     var i = 0;
     var board_table = document.getElementById("board");
-
     for (let r = 0; r < rows; r++) {
         let row = [];
 
@@ -96,13 +115,6 @@ function startGame() {
         }
         board.push(row);
     }
-    new_battle();
-    show_stat();
-}
-
-
-function randomCandy() {
-    return chess[Math.floor(Math.random() * chess.length)]; //0 - 5.99
 }
 
 
@@ -142,7 +154,6 @@ function clickabd() {
 }
 
 
-
 function dragEnd() {
 
     if (currTile.src.includes(blank) || otherTile.src.includes(blank)) {
@@ -174,14 +185,7 @@ function dragEnd() {
 
         // let check = checkValid();
         // if (check) {
-        if (special_block.indexOf(currTile.src) != -1 && special_block.indexOf(otherTile.src) != -1) {
-            var arr_list = [];
-            arr_list.push(currTile);
-            arr_list.push(otherTile);
-            clear_and_special(arr_list, -1);
-        }
-        slideCandy();
-        // check_special_effect();
+        check_special_effect();
         // } else {
         //     setTimeout(() => {
 
@@ -196,99 +200,95 @@ function dragEnd() {
         otherTile = undefined;
     }
 }
+function check_special_effect() { // kiểm tra block đặc biệt kết hợp với block thường hay ngang dọc
+    if (currTile.src == special && otherTile.src == special) {//xóa hết nếu 2block special
+        for (let r = 0; r < board.length; r++) {
+            board[r].forEach(element => {
+                remove_box(element);
+            });
+        }
+        crushCandy();
+    } else {
+        if (currTile.src == special || otherTile.src == special) {
+            let rs = null;
+            let change_block = null;
+            if (currTile.src == special) {
+                change_block = otherTile.src;
+                if (chess.indexOf(otherTile.src) != -1) {
+                    for (let r = 0; r < board.length; r++) {
+                        board[r].forEach(element => {
+                            if (element.src == otherTile.src) remove_box(element);
+                        });
+                    }
+                    remove_box(currTile);
+                }
+                else {
+                    switch (true) {
+                        case star_block.indexOf(otherTile.src) != -1: rs = star_block; break;
+                        case yingyang_block.indexOf(otherTile.src) != -1: rs = yingyang_block; break;
+                        case sword_block.indexOf(otherTile.src) != -1: rs = sword_block; break;
+                        case water_block.indexOf(otherTile.src) != -1: rs = water_block; break;
+                        case heart_block.indexOf(otherTile.src) != -1: rs = heart_block; break;
+                        case melon_block.indexOf(otherTile.src) != -1: rs = melon_block; break;
+                    }
+                }
 
-
-function checkValid() {
-    //check rows
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < columns - 2; c++) {
-            let candy1 = board[r][c];
-            let candy2 = board[r][c + 1];
-            let candy3 = board[r][c + 2];
-            if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes(blank)) {
-                return true;
             }
-        }
-    }
+            if (otherTile.src == special) {
+                change_block = currTile.src;
+                if (chess.indexOf(currTile.src) != -1) {
+                    for (let r = 0; r < board.length; r++) {
+                        board[r].forEach(element => {
+                            if (element.src == currTile.src) remove_box(element);
+                        });
+                    }
+                    remove_box(otherTile);
+                } else {
+                    switch (true) {
+                        case star_block.indexOf(currTile.src) != -1: rs = star_block; break;
+                        case yingyang_block.indexOf(currTile.src) != -1: rs = yingyang_block; break;
+                        case sword_block.indexOf(currTile.src) != -1: rs = sword_block; break;
+                        case water_block.indexOf(currTile.src) != -1: rs = water_block; break;
+                        case heart_block.indexOf(currTile.src) != -1: rs = heart_block; break;
+                        case melon_block.indexOf(currTile.src) != -1: rs = melon_block; break;
+                    }
+                }
 
-    //check columns
-    for (let c = 0; c < columns; c++) {
-        for (let r = 0; r < rows - 2; r++) {
-            let candy1 = board[r][c];
-            let candy2 = board[r + 1][c];
-            let candy3 = board[r + 2][c];
-            if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes(blank)) {
-                return true;
             }
-        }
-    }
+            if (rs != null) {
 
-    return false;
-}
+                for (let r = 0; r < board.length; r++) {
+                    board[r].forEach(element => {
+                        if (rs.indexOf(element.src) != -1) {
+                            element.src = change_block;
+                        }
+                    });
+                    setTimeout(() => {
+                        let array0 = document.querySelectorAll('img[src="' + change_block + '"]');
+                        clear_and_special(array0, -1);
+                    }, 200);
+                }
 
-function generateCandy() {
-    for (let c = 0; c < columns; c++) {
-        if (board[0][c].src.includes(blank)) {
-            board[0][c].src = randomCandy();
-        }
-    }
-}
-function runGame() {
-    let validMove = checkValid();
-    if (validMove == true) {
-        crushCandy()
-    }
-}
-function remove_hidden() {
-    var allChess = document.querySelectorAll(".ch-Chess");
-    if (allChess.length > 0) {
-        for (let piece of allChess) {
-            piece.classList.remove('hidden');
-        }
-    }
-
-}
-
-function slideCandy() {
-
-    remove_hidden();
-
-    for (let c = 0; c < columns; c++) {
-        if (board[0][c].src.includes(blank)) {
-            board[0][c].src = randomCandy();
-        }
-    }
-    for (let r = rows - 1; r >= 1; r--) {
-        for (let c = columns - 1; c >= 0; c--) {
-            if (board[r][c].src == blank) {
-                // if (board[r - 1][c].classList.contains("class3x3")) {
-                //     board[r][c].classList.add("class3x3");
-                //     board[r - 1][c].classList.remove("class3x3");
-                // }
-                board[r][c].src = board[r - 1][c].src
-                board[r - 1][c].src = blank
             }
+            setTimeout(function () { slideCandy() }, 500)
+        }
+        else {
+            if (special_block.indexOf(currTile.src) != -1 && special_block.indexOf(otherTile.src) != -1) {
+                var arr_list = effect_x_effect();;
+                clear_and_special(arr_list, -1);
+            }
+            //  crushCandy();
         }
     }
-    setTimeout(() => {
-        var allChess = document.querySelectorAll('img[src="' + blank + '"]');
-        if (allChess.length != 0) {
-            slideCandy();
-        } else {
-            crushCandy();
-        }
-    }, 100);
-}
-function remove_box(box) {
-    // if (box.classList.contains("class3x3")) return;
-    box.classList.add("hidden");
-    setTimeout(function () {
-        box.src = blank;
-    }, 150);
+    slideCandy();
 }
 function crushCandy() {
-    let listOfArrays = [];
+    crushThree_V2();
+}
+
+function crushThree_V2() {
     //check rows
+    let listOfArrays = [];
     for (let r = 0; r < rows; r++) {
         let array = [];
         let candy1 = board[r][0];
@@ -327,58 +327,107 @@ function crushCandy() {
         }
     }
 
-    var rs = get_all_clear(listOfArrays);
+    let block_3x3 = document.querySelectorAll(".class3x3");
+    if (block_3x3.length != 0) {
+        clear_and_special(block_3x3, -1);
+        setTimeout(function () { slideCandy() }, 500)
+    }
 
+    var rs = get_all_clear(listOfArrays);
     if (rs.length != 0) {
-        clearInterval(CD);
         rs.forEach(element => {
             if (element.length > 3) {
-                //tạo viên hiệu ứng nếu move
-                let index = -1;
                 if (currTile != undefined && otherTile != undefined) {
                     if (element.indexOf(currTile) != -1) {
-                        index = element.indexOf(currTile);
-
-                    } else
-                        if (element.indexOf(otherTile) != -1) {
-                            index = element.indexOf(otherTile);
-                        }
+                        clear_and_special(element, element.indexOf(currTile));
+                    }
+                    if (element.indexOf(otherTile) != -1) {
+                        clear_and_special(element, element.indexOf(otherTile));
+                    }
                 }
                 else {
-                    index = Math.floor(Math.random() * (element.length - 1));
+                    var duplicate = element.filter((item, index) => element.indexOf(item) != index);
+                    if (duplicate.length > 0) {
+                        clear_and_special(element, [... new Set(element)].indexOf(duplicate[0]));
+                    } else {
+                        var randomNum = Math.floor(Math.random() * (element.length - 1));
+                        clear_and_special(element, randomNum);
+                    }
                 }
-                var src = clear_and_special(element, 0);
-                setTimeout(() => {
-                    element[index].src = src;
-                }, 300);
             } else {
-                clear_and_special(element, -1)
+                clear_and_special(element, -1);
             }
-        });
-        
-    }
-    remove_hidden();
-    //người đang chơi
-    if(P1.get_play()||P2.get_play()){
-        if (P1.get_play()) {
-            P2.get_hp(-get_point(P1));
-        }
-    
-        if(P2.get_play()) {
-            P1.get_hp(-get_point(P2));
-        }
-    }
-    
 
+        });
+    }
     if (rs.length != 0) {
         setTimeout(function () { slideCandy() }, 500)
-    } else {
-        change_player();
-        show_stat();
     }
 }
-
-//nhóm khối lại
+//xử lý 2 khối hiệu ứng hợp nhau
+function effect_x_effect() {
+    var effect_ngang = [starNgang, yinyangNgang, swordNgang, waterNgang, heartNgang, melonNgang];
+    var effect_doc = [starDoc, yinyangDoc, swordDoc, waterDoc, heartDoc, melonDoc];
+    var effect_3x3 = [star3x3, yinyang3x3, sword3x3, water3x3, heart3x3, melon3x3];
+    let effect1, effect2;
+    var arr_list = [];
+    switch (true) {
+        case effect_3x3.indexOf(currTile.src) != -1: effect1 = "3x3";
+            break;
+        case effect_ngang.indexOf(currTile.src) != -1: effect1 = "ngang";
+            break;
+        case effect_doc.indexOf(currTile.src) != -1: effect1 = "doc";
+            break;
+    }
+    switch (true) {
+        case effect_3x3.indexOf(otherTile.src) != -1: effect2 = "3x3";
+            break;
+        case effect_ngang.indexOf(otherTile.src) != -1: effect2 = "ngang";
+            break;
+        case effect_doc.indexOf(otherTile.src) != -1: effect2 = "doc";
+            break;
+    }
+    let curr=null;
+    switch (true) {
+        case effect1 == "3x3" && effect2 == "ngang":
+        case effect1 == "3x3" && effect2 == "doc":
+                curr = currTile.id.split("-"); // id="0-0" -> ["0", "0"]
+            break;
+        case effect1 == "ngang" && effect2 == "3x3":
+        case effect1 == "doc" && effect2 == "3x3":
+                curr = otherTile.id.split("-"); // id="0-0" -> ["0", "0"]
+            break;
+        case effect1 == "3x3" && effect2 == "3x3":
+                curr = curr.id.split("-"); // id="0-0" -> ["0", "0"]
+            break;
+        default:
+            arr_list.push(currTile);
+            arr_list.push(otherTile);
+            return arr_list;
+    }
+    if (curr!=null){
+        let r = Number(curr[0]);//lấy hàng
+        let c = Number(curr[1]);//lấy cột
+        let min_hang = r - 1, min_cot = c - 1, max_hang = r + 1, max_cot = c + 1;
+        if (r == 0) { min_hang = r; }
+        if (r == (rows - 1)) { max_hang = r; }
+        if (c == 0) { min_cot = c; }
+        if (c == (columns - 1)) { max_cot = c; }
+        for (let i = 0; i < board.length; i++) {
+            if (i >= min_hang && i <= max_hang) {
+                board[i].forEach(element => {
+                    arr_list.push(element);
+                });
+                continue;
+            }
+            for (let j = min_cot; j <= max_cot; j++) {
+                arr_list.push(board[i][j]);
+            }
+        }
+    }
+    
+    return arr_list;
+}
 function group_block(block) {
     if (star_block.indexOf(block) != -1) return star_block;
     if (yingyang_block.indexOf(block) != -1) return yingyang_block;
@@ -387,273 +436,40 @@ function group_block(block) {
     if (heart_block.indexOf(block) != -1) return heart_block;
     if (melon_block.indexOf(block) != -1) return melon_block;
 }
-//lấy danh sách có thể xóa
-function get_all_clear(listOfArrays) {
-    var return_list = [];
-    for (let i = 0; i < listOfArrays.length; i++) {
-        let list = listOfArrays[i];
-        for (let j = i + 1; j < listOfArrays.length; j++) {
-            var dup = [... new Set(list)].filter(item => listOfArrays[j].includes(item));
-            if (dup.length > 0) {
-                list = list.concat(listOfArrays[j]);
-                listOfArrays = listOfArrays.splice(j, 1);
-                i = 0;
-            }
-        }
-        return_list.push(list);
-    }
-
-    return (return_list);
-}
-
-
-// part2
-
-class battle_stat {
-    constructor(hp, mana, exp) {
-        this.hp = hp;
-        this.mana = mana;
-        this.exp = exp;
-        this.shield = 0;
-        this.leech = 0;
-    }
-    get_MP(mana) {
-        this.mana += mana;
-        if (this.mana >= 500) { this.mana = 500 }
-        return this.mana;
-    }
-    get_exp(exp) {
-        this.exp += exp;
-        if (this.exp >= 800) { this.exp = 800 }
-        return this.exp;
-    }
-    get_hp(hp) {
-        if (hp < 0) {
-            if (this.shield > 0) {
-                let dmg = this.shield + hp
-                if (dmg < 0) {
-                    this.shield = 0;
-                    this.hp += dmg
-                } else {
-                    this.shield += hp
-                }
-            } else {
-                this.hp += hp;
-            }
-        } else {
-            this.hp += hp;
-        }
-        return this.hp;
-    }
-    set_play(play) {
-        this.play = play
-    }
-    get_play() {
-        return this.play
-    }
-    LEECH(HP) {
-        this.hp += HP;
-        this.leech += HP;
-        return this.leech;
-    }
-    get_shield(shield) {
-        this.shield += shield
-        return this.shield
-    }
-}
-var star1 = 0; star2 = 0;
-var battle_calculation
-var winner
-function new_battle() {
-    P1 = new battle_stat(400, 0, 0);
-    P2 = new battle_stat(400, 0, 0);
-    star1 = 0; star2 = 0;
-    cool_down(20);
-}
-function check_winer() {
-    if (P1.get_hp(0) < 0) {
-        winner = "P2";
-    }
-    if (P2.get_hp(0) < 0) {
-        winner = "P1";
-    }
-    end_battle()
-}
-//tổng kết thúc trận đấu
-function end_battle() {
-    if (winner != undefined) {
-        switch (winner) {
-            case "P1": break;
-            case "P2": break;
-        }
-    }
-}
-var CD 
-
-function cool_down(N) {
-    CD=setInterval(() => {
-        let inplay = ""
-        if (N < 0) {
-            N = 20
-            change_player();
-        }
-        inplay = check_inplay();
-        var clock = document.getElementById('clock');
-        clock.innerText = inplay + " " + N;
-        N--;
-    }, 1000);
-}
-function check_inplay() {
-    if (P1.get_play()) {
-        return "P1"
-    }
-    else {
-        return "P2"
-    }
-}
-function change_player() {
-    if (P1.get_play()) {
-        P1.get_hp(battle_calculation.LEECH(0));
-        P1.get_exp(battle_calculation.get_exp(0));
-        P1.get_shield(battle_calculation.get_shield(0));
-        P1.get_hp(battle_calculation.get_hp(0));
-        P1.get_MP(battle_calculation.get_MP(0));
-        P1.set_play(false);
-
-        P2.set_play(true);
-    } else {
-        P2.set_play(false);
-        P2.get_hp(battle_calculation.LEECH(0));
-        P2.get_exp(battle_calculation.get_exp(0));
-        P2.get_shield(battle_calculation.get_shield(0));
-        P2.get_MP(battle_calculation.get_MP(0));
-        P2.get_hp(battle_calculation.get_hp(0));
-
-        P1.set_play(true);
-    }
-    clearInterval(CD)
-    cool_down(20);
-}
-function show_stat() {
-    let hp1 = document.getElementById("HP1")
-    let hp2 = document.getElementById("HP2")
-    let mp1 = document.getElementById("MP1")
-    let mp2 = document.getElementById("MP2")
-    let exp1 = document.getElementById("EXP1")
-    let exp2 = document.getElementById("EXP2")
-    let SHIELD1 = document.getElementById("SHIELD1")
-    let SHIELD2 = document.getElementById("SHIELD2")
-
-    hp1.innerText = P1.get_hp(0);
-    mp1.innerText = P1.get_MP(0) + "/500";
-    exp1.innerText = "LV " + Math.floor(P1.get_exp(0) / 100) + " (" + (P1.get_exp(0) % 100) + "%)";
-    SHIELD1.innerText = "SHIELD: " + P1.get_shield(0);
-
-    hp2.innerText = P2.get_hp(0);
-    mp2.innerText = P2.get_MP(0) + "/500";
-    exp2.innerText = "LV " + Math.floor(P2.get_exp(0) / 100) + " (" + (P2.get_exp(0) % 100) + "%)";
-    SHIELD2.innerText = "SHIELD: " + P2.get_shield(0);
-    showToast();
-    check_winer();
-
-    battle_calculation = new battle_stat(0, 0, 0);
-}
-function get_point(player) {
-    let exp = 0, dmg = 0, mana = 0, hp = 0, star = 0;
-    point_array.forEach(block => {
-        switch (true) {
-            case star_block.indexOf(block) != -1: star += 1; break
-            case yingyang_block.indexOf(block) != -1: yingyang_effects(player); break
-            case sword_block.indexOf(block) != -1: dmg += sword_effects(player); break
-            case water_block.indexOf(block) != -1: mana += water_effects(); break
-            case heart_block.indexOf(block) != -1: hp += (heart_effects(player)); break
-            case melon_block.indexOf(block) != -1: exp += melon_effects(); break
-        }
-    });
-    battle_calculation.get_exp(exp);
-    battle_calculation.get_MP(mana);
-    battle_calculation.get_hp(hp);
-    point_array = []
-    return dmg;//trả về dmg gây ra
-}
-
-function heart_effects(player) {
-    let lvl = Math.floor(player.get_exp(0) / 100);
-    return 2 + (0.5 * lvl);
-}
-function melon_effects() {
-    return 9;
-}
-function sword_effects(player) {
-    let lvl = Math.floor(player.get_exp(0) / 100);
-    return Number(2 + lvl);
-}
-function water_effects() {
-    return 10;
-}
-function yingyang_effects(player) {
-    let lvl = Math.floor(player.get_exp(0) / 100);
-    let hp = 0, shield = 0;
-    hp = 1.5 + (0.5 * lvl)
-    shield = 0.5 + (0.5 * lvl)
-    battle_calculation.LEECH(hp)
-    battle_calculation.get_shield(shield)
-}
-function showToast() {
-    if (battle_calculation != undefined) {
-        var toast = document.getElementById("toast");
-        if (toast != undefined) {
-            var s = "";
-            if (battle_calculation.get_hp(0) > 0) {
-                s += "<p>HP RECOVER: " + battle_calculation.get_hp(0) + "</p>"
-            }
-            if (battle_calculation.get_MP(0) > 0) {
-                s += "<p>MP GAIN: " + battle_calculation.get_MP(0) + "</p>"
-            }
-            if (battle_calculation.LEECH(0) > 0) {
-                s += "<p>LEECH: " + battle_calculation.LEECH(0) + "HP and create " + battle_calculation.get_shield(0) + " SHIELD" + "</p>"
-            }
-            if (battle_calculation.get_exp(0) > 0) {
-                s += "<p>EXP GAIN: " + battle_calculation.get_exp(0) + "%" + "</p>"
-            }
-            if (s != "") {
-                toast.style.visibility = 'visible'
-                toast.innerHTML = s
-                let closebtn = document.createElement("input");
-                closebtn.classList.add("btn-close-toast")
-
-                closebtn.type = "button"; // Loại nút là button
-                closebtn.value = "Close"; // Giá trị hiển thị trên nút
-                closebtn.addEventListener("click", function () {
-                    // Xử lý khi nút được nhấn
-                    toast.style.visibility = 'hidden'
-                    this.remove();
-                });
-                toast.appendChild(closebtn)
-
-                // setTimeout(function () {
-                //     toast.className = toast.className.replace("show", "");
-                // }, 3000);
-            }
-
-        }
-    }
-
-
-}
-// part3
-
-var remove_flag = true;
-
-function clear_and_special(array,index) {
+function clear_and_special(array, index) {//mảng bị xóa và ô sẽ thay thế = ô đặc biệt
     let src = "";
     var arr = [... new Set(array)];
-    let list_special = [];//mảng các phần tử đặc biệt trong array bị xóa 
+    let list_special = [];//mảng các phần tử đặc biệt trong array bị xóa bởi slide
     for (let i = 0; i < arr.length; i++) {
         let index_special = special_block.indexOf(arr[i].src);
         if (index_special != -1) { list_special.push(arr[i]); }
     }
-    //-1 là rơi ngẫu nhiên ngược lại có tọa độ do ghép
+    let affter_effect = [];//mảng bị xóa bởi ô đặc biệt
+    if (list_special.length > 0) {
+        for (let i = 0; i < list_special.length; i++) {
+            affter_effect = affter_effect.concat(special_effect(list_special[i], []));
+        }
+        let number_special = list_special.length;//số ô đặc biệt ban đầu
+        //số ô đặc biệt sau khi lọc ra bị xóa
+        let array_special = [... new Set(affter_effect)].filter((item) => { if (special_block.indexOf(item.src) != -1) return item; });
+        // kiểm tra số ô đb ban đầu == số ô đb sau khi xóa =>sai thì xử lý tiếp đến khi bằng nhau 
+        while (array_special.length > number_special) {
+            console.log(array_special, number_special);
+            number_special = array_special.length;//gán lại số lượng giá trị mới
+            affter_effect = [];
+            for (let i = 0; i < array_special.length; i++) {
+                affter_effect = affter_effect.concat(special_effect(array_special[i], []));
+            }
+            //lấy lại danh sách ô đb sau khi bị ảnh hưởng
+            array_special = [... new Set(affter_effect)].filter((item) => { if (special_block.indexOf(item.src) != -1) return item; });
+        }
+        let final_array = [... new Set(affter_effect)];
+        if (final_array.length != 0) {
+            for (let i = 0; i < final_array.length; i++) {
+                remove_box(final_array[i]);
+            }
+        }
+    }
     if (index != -1) {
         if (arr.length == 4) {//ăn 4 ô
             src = create_block4(arr);
@@ -664,32 +480,41 @@ function clear_and_special(array,index) {
                 src = create_block_5(arr);
             }
         }
+        //xóa ô 
+        if (src != "") {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == arr[index]) {
+                    arr[i].src = src;
+                }
+                else {
+                    remove_box(arr[i]);
+                }
+            }
+        }
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            remove_box(arr[i]);
+        }
     }
-    for (let i = 0; i < arr.length; i++) {
-        point_array.push(arr[i].src);
+}
+function remove_box(box) {
+    if (box.classList.contains("class3x3")) return;
 
-        remove_box(arr[i]);
-    }
-    if(list_special.length>0){
-        list_special.forEach(element => {
-            var effect_box=element;
-            let array=special_effect(effect_box);
-            element.src=blank;
-            clear_and_special(array,-1)
-        });
-    } 
-    return src;
+    box.classList.add("hidden");
+    setTimeout(function () {
+        box.src = blank;
+    }, 150);
 }
 
-
-var point_array=[];
-//lấy mảng bị ảnh hưởng bởi 1 hiệu ứng
-function special_effect(effectbox) {
+function special_effect(effectbox, remove_list) {
+    var effect_ngang = [starNgang, yinyangNgang, swordNgang, waterNgang, heartNgang, melonNgang];
+    var effect_doc = [starDoc, yinyangDoc, swordDoc, waterDoc, heartDoc, melonDoc];
+    var effect_3x3 = [star3x3, yinyang3x3, sword3x3, water3x3, heart3x3, melon3x3];
     let curr = effectbox.id.split("-"); // id="0-0" -> ["0", "0"]
     let r = Number(curr[0]);//lấy hàng
     let c = Number(curr[1]);//lấy cột
-    let list_remove = [];
 
+    let list_remove = remove_list;
     switch (true) {
         case (effect_ngang.indexOf(effectbox.src) != -1):
             board[r].forEach(element => {
@@ -698,6 +523,7 @@ function special_effect(effectbox) {
             break;
         case (effect_doc.indexOf(effectbox.src) != -1):
             for (let j = 0; j < board.length; j++) {
+
                 list_remove.push(board[j][c]);
             }
             break;
@@ -710,6 +536,15 @@ function special_effect(effectbox) {
             if (c == (columns - 1)) { max_cot = c; }
             for (let h = min_hang; h <= max_hang; h++) {
                 for (let d = min_cot; d <= max_cot; d++) {
+                    if (effect_3x3.indexOf(board[h][d].src) != -1) {
+                        if (!effectbox.classList.contains("class3x3")) {
+                            effectbox.classList.add("class3x3");
+                        } else {
+                            if (board[h][d] != null) list_remove.push(board[h][d]);
+                            effectbox.classList.remove("class3x3");
+                        }
+                    }
+
                     if (board[h][d] != null) list_remove.push(board[h][d]);
                 }
             }
@@ -791,3 +626,102 @@ function create_block_5(array) {
 
     return src;
 }
+function get_all_clear(listOfArrays) {
+    var return_list = [];
+    for (let i = 0; i < listOfArrays.length; i++) {
+        let list = listOfArrays[i];
+        for (let j = i + 1; j < listOfArrays.length; j++) {
+            var dup = [... new Set(list)].filter(item => listOfArrays[j].includes(item));
+            if (dup.length > 0) {
+                list = list.concat(listOfArrays[j]);
+                listOfArrays = listOfArrays.splice(j, 1);
+                i = 0;
+            }
+        }
+        return_list.push(list);
+    }
+
+    return (return_list);
+}
+
+function checkValid() {
+    //check rows
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns - 2; c++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r][c + 1];
+            let candy3 = board[r][c + 2];
+            if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes(blank)) {
+                return true;
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < columns; c++) {
+        for (let r = 0; r < rows - 2; r++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r + 1][c];
+            let candy3 = board[r + 2][c];
+            if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes(blank)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+function slideCandy() {
+
+    var allChess = document.querySelectorAll(".ch-Chess");
+    for (let piece of allChess) {
+        piece.classList.remove('hidden');
+    }
+    for (let r = rows - 1; r >= 1; r--) {
+        for (let c = columns - 1; c >= 0; c--) {
+            if (board[r][c].src == blank) {
+                if (board[r - 1][c].classList.contains("class3x3")) {
+                    board[r][c].classList.add("class3x3");
+                    board[r - 1][c].classList.remove("class3x3");
+                }
+                board[r][c].src = board[r - 1][c].src
+                board[r - 1][c].src = blank
+            }
+        }
+    }
+    for (let c = 0; c < columns; c++) {
+        if (board[0][c].src.includes(blank)) {
+            board[0][c].src = randomCandy();
+        }
+    }
+    setTimeout(() => {
+        var allChess = document.querySelectorAll('img[src="' + blank + '"]');
+
+        if (allChess.length != 0) {
+            slideCandy();
+        } else {
+            crushCandy();
+        }
+    }, 100);
+}
+
+function generateCandy() {
+    for (let c = 0; c < columns; c++) {
+        if (board[0][c].src.includes(blank)) {
+            board[0][c].src = randomCandy();
+        }
+    }
+}
+function runGame() {
+    let validMove = checkValid();
+    if (validMove == true) {
+        crushCandy()
+    }
+}
+function move_down(col, box) {
+    for (let r = rows - 1; r >= 0; r--) {
+        board[r][col].offsetTop;
+    }
+}
+

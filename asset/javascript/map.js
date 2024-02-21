@@ -180,12 +180,13 @@ var allItem
 var fullMap = []
 var positionMe = []
 
-function Character2(name,  nameDad) {
+function Character2(name, nameDad) {
     var character = document.createElement('div') // tạo nhân vật
     character.classList.add(name) //thêm class cho nhân vật 
 
     var fullclassApp = document.querySelector("." + nameDad) //gọi biến qua Dom
     fullclassApp.append(character); // chèn nhân vật vào dom trên
+
 
 
    
@@ -208,21 +209,36 @@ function Character2(name,  nameDad) {
     }
    
 }
+
+function Character3(name, text, nameDad) {
+    var character = document.createElement('div') // tạo nhân vật
+    character.classList.add(name) //thêm class cho nhân vật 
+    character.classList.add('nameMonster')
+    character.innerHTML = text
+
+    var fullclassApp = document.querySelector("." + nameDad) //gọi biến qua Dom
+    fullclassApp.append(character); // chèn nhân vật vào dom trên
+
+   
+}
 // bassicMap = new Map('bassicMap', 3600, (1910 * 2),0,0)
 // var oneMap = [bassicMap]
 var thisMap = thisMap1
+var MonsterArray = []
+//tắt khi chuyển map
 
 var thisMap1 = function() {
     bassicMap = new Map('bassicMap', 3600, 3820,0,0)
     bassicMap.backgroundColor('none')
     bassicMap.backgroundImage("url('asset/img/nền_map1.png')")
-    function Character(name, width, height, top, left) {
+    function Character(name, number, width, height, top, left) {
     
         var character = document.createElement('div') // tạo nhân vật
         character.classList.add(name) //thêm class cho nhân vật 
         character.classList.add('me') //thêm class me, để có được css tạo sẵn
 
         this.height = height
+        this.number = number
         this.width = width
         this.class = name //gọi class
         // this.top = top
@@ -244,9 +260,16 @@ var thisMap1 = function() {
         this.topp = function() {
             return  Number(character.style.top.slice(0,-2))
         }
+
+        this.toppX = function() {
+            character.style.top = top + 'px'
+        }
         // 2.2 hàm lấy giá trị left
         this.leftt = function() {
             return Number(character.style.left.slice(0,-2))
+        }
+        this.lefttX = function(left) {
+            character.style.left= left + 'px'
         }
     
         // 1.1 hàm tạo nút đi xuống
@@ -327,16 +350,430 @@ var thisMap1 = function() {
         allItem = [exit1,exit2,exit3,exit4,exit5]
 
 
-        var monster1 = new Character('monster', 160, 260,3550,2400)
-        var monster2 = new Character('monster', 160, 260,200,1800)
-        var monster3 = new Character('monster', 160, 260,3550,1000)
-        var monster4 = new Character('monster', 160, 260,1600,200)
-        var monster5 = new Character('monster', 160, 260,1600,3300)
-        var monster6 = new Character('monster', 160, 260,3550,2400)
-        var monster7 = new Character('monster', 160, 260,200,1800)
-        var monster8 = new Character('monster', 160, 260,3550,1000)
-        var monster9 = new Character('monster', 160, 260,1600,200)
-        var monster10 = new Character('monster', 160, 260,1600,3300)
+        var monster1 = new Character('monster1', '1', 160, 260, 3000,2400)
+        var monster2 = new Character('monster2', '2', 160, 260,3000,1800)
+        var monster3 = new Character('monster3', '3', 160, 260,3550,1000)
+        var monster4 = new Character('monster4', '4', 160, 260,1600,200)
+        var monster5 = new Character('monster5', '5', 160, 260,1600,3300)
+        var monster6 = new Character('monster6', '6', 160, 260,2800,600)
+        var monster7 = new Character('monster7', '7', 160, 260,1800,1900)
+        var monster8 = new Character('monster8', '8', 160, 260,1200,2800)
+        var monster9 = new Character('monster9', '9', 160, 260,1000,2000)
+        var monster10 = new Character('monster10', '10', 160, 260,2560,2800)
+       
+
+        var monSha1 = new Character2('monSha', 'monster1')
+        var monSha2 = new Character2('monSha', 'monster2')
+        var monSha3 = new Character2('monSha', 'monster3')
+        var monSha4 = new Character2('monSha', 'monster4')
+        var monSha5 = new Character2('monSha', 'monster5')
+        var monSha6 = new Character2('monSha', 'monster6')
+        var monSha7 = new Character2('monSha', 'monster7')
+        var monSha8 = new Character2('monSha', 'monster8')
+        var monSha9 = new Character2('monSha', 'monster9')
+        var monSha10 = new Character2('monSha', 'monster10')
+
+
+        var monSha_1 = new Character3('monSha_', 'Quái Vật 1', 'monster1')
+        var monSha_2 = new Character3('monSha_', 'Quái Vật 2', 'monster2')
+        var monSha_3 = new Character3('monSha_', 'Quái Vật 3', 'monster3')
+        var monSha_4 = new Character3('monSha_', 'Quái Vật 4', 'monster4')
+        var monSha_5 = new Character3('monSha_', 'Quái Vật 5', 'monster5')
+        var monSha_6 = new Character3('monSha_', 'Quái Vật 6', 'monster6')
+        var monSha_7 = new Character3('monSha_', 'Quái Vật 7', 'monster7')
+        var monSha_8 = new Character3('monSha_', 'Quái Vật 8', 'monster8')
+        var monSha_9 = new Character3('monSha_', 'Quái Vật 9', 'monster9')
+        var monSha_10 = new Character3('monSha_', 'Quái Vật 10', 'monster10')
+
+        
+        // var monSha1 = new Character2('monSha', 'Quái Vật 1', 'monster1')
+        // var monSha2 = new Character2('monSha', 'Quái Vật 2', 'monster2')
+        // var monSha3 = new Character2('monSha', 'Quái Vật 3', 'monster3')
+        // var monSha4 = new Character2('monSha', 'Quái Vật 4', 'monster4')
+        // var monSha5 = new Character2('monSha', 'Quái Vật 5', 'monster5')
+        // var monSha6 = new Character2('monSha', 'Quái Vật 6', 'monster6')
+        // var monSha7 = new Character2('monSha', 'Quái Vật 7', 'monster7')
+        // var monSha8 = new Character2('monSha', 'Quái Vật 8', 'monster8')
+        // var monSha9 = new Character2('monSha', 'Quái Vật 9', 'monster9')
+        // var monSha10 = new Character2('monSha', 'Quái Vật 10', 'monster10')
+
+
+        monSha1.backgroundColor("none")
+        monSha2.backgroundColor("none")
+        monSha3.backgroundColor("none")
+        monSha4.backgroundColor("none")
+        monSha5.backgroundColor("none")
+        monSha6.backgroundColor("none")
+        monSha7.backgroundColor("none")
+        monSha8.backgroundColor("none")
+        monSha9.backgroundColor("none")
+        monSha10.backgroundColor("none")
+
+        monSha1.backgroundColor("none")
+        monSha2.backgroundColor("none")
+        monSha3.backgroundColor("none")
+        monSha4.backgroundColor("none")
+        monSha5.backgroundColor("none")
+        monSha6.backgroundColor("none")
+        monSha7.backgroundColor("none")
+        monSha8.backgroundColor("none")
+        monSha9.backgroundColor("none")
+        monSha10.backgroundColor("none")
+
+        monSha1.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha2.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha3.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha4.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha5.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha6.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha7.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha8.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha9.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+        monSha10.backgroundImage("url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')", '60px 61px', 'no-repeat','279px',
+'meMe')
+
+MonsterArray = [monster1, monster2,monster3,monster4,monster5,monster6,monster7,monster8,monster9,monster10]
+function randomMonster(i) {
+    var random = Math.floor(Math.random() * 4) + 1
+    // console.log(random)
+   
+    switch(random) {
+         case 1: {
+            // xuống
+            var  n = 0
+            var ed = setInterval(function() {
+                if (n <= 8) {
+                    n++
+
+                    MonsterArray[i].topp() + 7
+                    document.querySelector("." + MonsterArray[i].class).style.top = (MonsterArray[i].topp() + 7) + 'px'
+                    if (MonsterArray[i].topp() + 7 >= bassicMap.height - MonsterArray[i].height) {
+                        document.querySelector("." + MonsterArray[i].class).style.top = (bassicMap.height - MonsterArray[i].height) + 'px'
+                    }
+                } else {n = 0; clearInterval(ed)}
+            },50)
+            break;
+
+        }
+
+        case 2: {
+        //    lên
+            var  n = 0 
+            var ed = setInterval(function() {
+                if (n <= 8) {
+                    n++
+
+                    console.log(MonsterArray[i].topp() - 7)
+                    document.querySelector("." + MonsterArray[i].class).style.top = (MonsterArray[i].topp() - 7) + 'px'
+                    if (MonsterArray[i].topp() - 7 <= 220 ) {
+                        document.querySelector("." + MonsterArray[i].class).style.top = 220 + 'px'
+                    }
+                } else {n = 0; clearInterval(ed)}
+            },50)
+            break;
+
+        }
+      
+         case 3: {
+            // phải
+            var  n = 0
+            var ed = setInterval(function() {
+                if (n <= 8) {
+                    n++
+
+                    MonsterArray[i].leftt() +7 
+                    MonsterArray[i].lefttX(MonsterArray[i].leftt() +7)
+                    if (MonsterArray[i].leftt() + 7 + MonsterArray[i].width >= bassicMap.width) {
+                        MonsterArray[i].lefttX(bassicMap.width - MonsterArray[i].width)
+                    }
+                } else {n = 0; clearInterval(ed)}
+            },50)
+            break;
+
+        }
+        case 4: {
+            // trái
+            var  n = 0
+            var ed = setInterval(function() {
+                if (n <= 8) {
+                    n++
+
+                    MonsterArray[i].leftt() - 7
+                    MonsterArray[i].lefttX(MonsterArray[i].leftt() - 7)
+                    if (MonsterArray[i].leftt() - 7 <= 0) {
+                        MonsterArray[i].lefttX(0)
+                    }
+                } else {n = 0; clearInterval(ed)}
+            },50)
+            break;
+
+        }
+    
+    }
+    setTimeout(function() {randomMonster(i)},410)
+}
+// randomMonster(0)
+// randomMonster(1)
+// randomMonster(2)
+// randomMonster(3)
+// randomMonster(4)
+// randomMonster(5)
+// randomMonster(6)
+// randomMonster(7)
+// randomMonster(8)
+// randomMonster(9)
+
+var numberChange = []
+var iik = setInterval(function() { 
+        if (MonsterArray[0].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[0].leftt() + MonsterArray[0].width) <= 200 && MonsterArray[0].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[0].topp() - MonsterArray[0].height <= 200) {
+                document.querySelector(".ac").classList.remove("none")
+                document.querySelector(".ad").classList.remove("none")
+                document.querySelector(".acc").innerHTML = MonsterArray[0].number
+                numberChange.push(MonsterArray[0].number)
+                
+                
+        } 
+          else if (MonsterArray[1].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[1].leftt() + MonsterArray[1].width) <= 200 && MonsterArray[1].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[1].topp() - MonsterArray[1].height <= 200) {
+            document.querySelector(".ac").classList.remove("none")
+            document.querySelector(".ad").classList.remove("none")
+            document.querySelector(".acc").innerHTML = MonsterArray[1].number
+                numberChange.push(MonsterArray[1].number)
+            
+    } 
+      else if (MonsterArray[2].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[2].leftt() + MonsterArray[2].width) <= 200 && MonsterArray[2].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[2].topp() - MonsterArray[2].height <= 200) {
+        document.querySelector(".ac").classList.remove("none")
+        document.querySelector(".ad").classList.remove("none")
+        document.querySelector(".acc").innerHTML = MonsterArray[2].number
+        numberChange.push(MonsterArray[2].number)
+               
+        
+} 
+  else if (MonsterArray[3].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[3].leftt() + MonsterArray[3].width) <= 200 && MonsterArray[3].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[3].topp() - MonsterArray[3].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[3].number
+    numberChange.push(MonsterArray[3].number)
+                
+    
+} 
+  else if (MonsterArray[4].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[4].leftt() + MonsterArray[4].width) <= 200 && MonsterArray[4].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[4].topp() - MonsterArray[4].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[4].number
+    numberChange.push(MonsterArray[4].number)
+    
+} 
+  else if (MonsterArray[5].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[5].leftt() + MonsterArray[5].width) <= 200 && MonsterArray[5].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[5].topp() - MonsterArray[5].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[5].number
+    numberChange.push(MonsterArray[5].number)
+    
+} 
+  else if (MonsterArray[6].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[6].leftt() + MonsterArray[6].width) <= 200 && MonsterArray[6].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[6].topp() - MonsterArray[6].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[6].number
+    numberChange.push(MonsterArray[6].number)
+    
+} 
+  else if (MonsterArray[7].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[7].leftt() + MonsterArray[7].width) <= 200 && MonsterArray[7].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[7].topp() - MonsterArray[7].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[7].number
+    numberChange.push(MonsterArray[7].number)
+    
+} 
+  else if (MonsterArray[8].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[8].leftt() + MonsterArray[8].width) <= 200 && MonsterArray[8].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[8].topp() - MonsterArray[8].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[8].number
+    numberChange.push(MonsterArray[8].number)
+    
+} 
+  else if (MonsterArray[9].leftt() - me.leftt() - me.width <= 200 && me.leftt() - (MonsterArray[9].leftt() + MonsterArray[9].width) <= 200 && MonsterArray[9].topp() - (me.height + me.topp()) <= 200 && me.topp() - MonsterArray[9].topp() - MonsterArray[9].height <= 200) {
+    document.querySelector(".ac").classList.remove("none")
+    document.querySelector(".ad").classList.remove("none")
+    document.querySelector(".acc").innerHTML = MonsterArray[9].number
+    numberChange.push(MonsterArray[9].number)
+    
+}
+
+else { document.querySelector(".ac").classList.add("none")
+document.querySelector(".ad").classList.add("none")
+numberChange = []
+} 
+    for (var i = 0; i < numberChange.length; i++) {
+        document.querySelector(".acc").innerHTML = numberChange[i]
+    
+}
+
+// document.querySelector(".ad").addEventListener("click", mami)
+// function mami() {
+
+// }
+},100)
+
+  
+    var meLeft = 0
+    var meTop = 0
+    var enemyLeft = 0
+    var enemyTop = 0
+document.querySelector(".ac").addEventListener("click", mamii)
+// nhớ tắt
+        function mamii() {
+            clearInterval(iik)
+            
+            var bb = Number(document.querySelector(".acc").innerHTML)
+            
+            
+
+           for (var i = 0; i < MonsterArray.length; i++) {
+                if (bb == MonsterArray[i].number) {
+                   ny()
+                    document.querySelector(".ac").classList.add("none")
+                    document.querySelector(".ad").classList.add("none")
+                    numberChange = []
+                    meLeft = me.leftt()
+                    meTop = me.topp()
+                    enemyLeft = MonsterArray[i].leftt()
+                    enemyTop = MonsterArray[i].topp()
+
+
+                    document.querySelector(".infor").classList.add("none")
+                    document.querySelector(".optionLocation1").classList.add("none")
+                    document.querySelector(".optionLocation2").classList.add("none")
+                    document.querySelector(".keyBoard").classList.add("none")
+
+                    // mở cờ
+                    document.querySelector(".GiapEnemey").classList.remove("none")
+                    document.querySelector(".outGame").classList.remove("none")
+                    document.querySelector(".Skill").classList.remove("none")
+                    document.querySelector(".GiapMe").classList.remove("none")
+
+                    document.querySelector(".board").classList.remove("none")
+                    document.querySelector(".lvEnemey").classList.remove("none")
+                    document.querySelector(".lvMe").classList.remove("none")
+                    document.querySelector(".manaEnemy").classList.remove("none")
+                    document.querySelector(".manaMe").classList.remove("none")
+
+                    document.querySelector(".timeEnemey").classList.remove("none")
+                    document.querySelector(".petEnemey").classList.remove("none")
+                    document.querySelector(".starEnemey").classList.remove("none")
+                    document.querySelector(".starEnemey1").classList.remove("none")
+                    document.querySelector(".hpEnemy").classList.remove("none")
+
+                    
+                    document.querySelector(".timeMe").classList.remove("none")
+                    document.querySelector(".petMe").classList.remove("none")
+                    document.querySelector(".starMe").classList.remove("none")
+                    document.querySelector(".starMe1").classList.remove("none")
+                    document.querySelector(".hpMe").classList.remove("none")
+
+                    document.querySelector(".mePosition").classList.remove("none")
+                    document.querySelector(".enemyPosition").classList.remove("none")
+                    document.querySelector(".meBoard").style.backgroundImage = "url('https://scontent.xx.fbcdn.net/v/t1.15752-9/415736587_754339319384647_5030219501129618554_n.png?stp=dst-png_p206x206&_nc_cat=109&ccb=1-7&_nc_sid=510075&_nc_ohc=S0CVj2Z4VFkAX_5NsfQ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQ_af9M562nI_8OYN7mDP0cZYgs-NdKOxQouQzncvM3uA&oe=65EAEDAB')"
+                    document.querySelector(".enemyBoard").style.backgroundImage = "url('https://scontent.xx.fbcdn.net/v/t1.15752-9/423422463_933916594760102_2739779803329589334_n.png?stp=dst-png_p206x206&_nc_cat=103&ccb=1-7&_nc_sid=510075&_nc_ohc=c3Q6JhZ40mMAX-kcuOF&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTk2N7D2X2od-yTl3LW-2eKFPIh9Za92_lGPn37H6wXtg&oe=65EB24F2')"
+                    document.querySelector(".enemyBoard").classList.add("monsterMap1")
+
+                    document.querySelector(".wrap").style.backgroundImage = "url(asset/img/picMap1.png)"
+                    var ef = setInterval(function() {
+                        if (Number(document.querySelector(".hpEnemy1").innerHTML) <= 0) {
+                            clearInterval(ef)
+                            document.querySelector(".wrap").style.backgroundImage = ""
+                            document.querySelector(".outGame").removeEventListener("click", mami)
+                            document.querySelector(".GiapEnemey").classList.add("none")
+                        document.querySelector(".outGame").classList.add("none")
+                        document.querySelector(".Skill").classList.add("none")
+                        document.querySelector(".GiapMe").classList.add("none")
+    
+                        document.querySelector(".board").classList.add("none")
+                        document.querySelector(".lvEnemey").classList.add("none")
+                        document.querySelector(".lvMe").classList.add("none")
+                        document.querySelector(".manaEnemy").classList.add("none")
+                        document.querySelector(".manaMe").classList.add("none")
+    
+                        document.querySelector(".timeEnemey").classList.add("none")
+                        document.querySelector(".petEnemey").classList.add("none")
+                        document.querySelector(".starEnemey").classList.add("none")
+                        document.querySelector(".starEnemey1").classList.add("none")
+                        document.querySelector(".hpEnemy").classList.add("none")
+    
+                        
+                        document.querySelector(".timeMe").classList.add("none")
+                        document.querySelector(".petMe").classList.add("none")
+                        document.querySelector(".starMe").classList.add("none")
+                        document.querySelector(".starMe1").classList.add("none")
+                        document.querySelector(".hpMe").classList.add("none")
+    
+                        document.querySelector(".mePosition").classList.add("none")
+                        document.querySelector(".enemyPosition").classList.add("none")
+                        document.querySelector(".enemyBoard").classList.remove("monsterMap1")
+    
+                        // thoát trận
+                        document.querySelector(".infor").classList.remove("none")
+                    document.querySelector(".optionLocation1").classList.remove("none")
+                    document.querySelector(".optionLocation2").classList.remove("none")
+                    document.querySelector(".keyBoard").classList.remove("none")
+                        }
+                    },100)
+
+
+                    document.querySelector(".outGame").addEventListener("click", mami)
+                    function mami() {
+                        document.querySelector(".wrap").style.backgroundImage = ""
+                        document.querySelector(".outGame").removeEventListener("click", mami)
+                        document.querySelector(".GiapEnemey").classList.add("none")
+                    document.querySelector(".outGame").classList.add("none")
+                    document.querySelector(".Skill").classList.add("none")
+                    document.querySelector(".GiapMe").classList.add("none")
+
+                    document.querySelector(".board").classList.add("none")
+                    document.querySelector(".lvEnemey").classList.add("none")
+                    document.querySelector(".lvMe").classList.add("none")
+                    document.querySelector(".manaEnemy").classList.add("none")
+                    document.querySelector(".manaMe").classList.add("none")
+
+                    document.querySelector(".timeEnemey").classList.add("none")
+                    document.querySelector(".petEnemey").classList.add("none")
+                    document.querySelector(".starEnemey").classList.add("none")
+                    document.querySelector(".starEnemey1").classList.add("none")
+                    document.querySelector(".hpEnemy").classList.add("none")
+
+                    
+                    document.querySelector(".timeMe").classList.add("none")
+                    document.querySelector(".petMe").classList.add("none")
+                    document.querySelector(".starMe").classList.add("none")
+                    document.querySelector(".starMe1").classList.add("none")
+                    document.querySelector(".hpMe").classList.add("none")
+
+                    document.querySelector(".mePosition").classList.add("none")
+                    document.querySelector(".enemyPosition").classList.add("none")
+                    document.querySelector(".enemyBoard").classList.remove("monsterMap1")
+
+                     // thoát trận
+                     document.querySelector(".infor").classList.remove("none")
+                     document.querySelector(".optionLocation1").classList.remove("none")
+                     document.querySelector(".optionLocation2").classList.remove("none")
+                     document.querySelector(".keyBoard").classList.remove("none")
+                 
+
+                    }
+
+                    
+                }
+           }
+            
+        }
 
         // bassicMap.backgroundColor('#9f00ff52')
 
@@ -344,7 +781,7 @@ var thisMap1 = function() {
         // itembassicMap2.backgroundColor('#c2a41e')
         
         var xy = function() {
-            console.log("hi")
+            console.log("")
         }
         var id = setInterval(function () {
 

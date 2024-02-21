@@ -56,52 +56,53 @@
             <!-- <div class="app2">
             </div> -->
     
-         <!-- <div class="option timeMe">20s</div>
-            <div class="option timeEnemey">15s</div>
-        <div class="option petMe">PetMe</div>
-            <div class="option petEnemey">PetDemon</div>
+         <div class="option timeMe none " id ="clock">20s</div>
+            <div class="option timeEnemey none">15s</div>
+        <div class="option petMe none">PetMe</div>
+            <div class="option petEnemey none ">PetDemon</div>
     
-        <div class="option starMe">99</div>
-            <div class="option starEnemey">0</div>
-     <div class="option starMe1"></div>
-            <div class="option starEnemey1"></div>
+        <div class="option starMe none ">99</div>
+            <div class="option starEnemey none ">0</div>
+     <div class="option starMe1 none "></div>
+            <div class="option starEnemey1 none "></div>
         
-                <div class="option hpMe">Hp: <span class="hpMe1">0</span>/<span class="hpMe2">0</span></div>
-                <div class="option hpEnemy">Hp: <span class="hpEnemy1">0</span>/<span class="hpEnemy2">0</span></div>
+                <div class="option hpMe none ">Hp: <span class="hpMe1" id="HP1">19</span>/<span class="hpMe2">222</span></div>
+                <div class="option hpEnemy none">Hp: <span class="hpEnemy1" id="HP2">199</span>/<span class="hpEnemy2">200</span></div>
     
-        <div class="option manaMe" style="
-        line-height: 60px;
-        height: 60px;
-        min-width: 197px;
-        left: 11px;
-        bottom: 439px;
-        font-size: 34px;
-    ">Mana: <span class="manaMe1">0</span>/<span class="manaMe2">0</span></div>
-                <div class="option manaEnemy">Mana: <span class="manaEnemy1">0</span>/<span class="manaEnemy2">0</span></div>
-    
+        <!-- <div class="option manaMe none">Mana: <span class="manaMe1">0</span>/<span class="manaMe2">0</span></div>
+        <div class="option manaEnemy none">Mana: <span class="manaEnemy1">0</span>/<span class="manaEnemy2">0</span></div>
+     -->
+
+     <div class="option manaMe none">Mana: <div id="MP1">0/500</div></div>
+     <div class="option manaEnemy none">Mana: <div id="MP2">0/500</div></div>
+ 
         
-            <div class="option lvMe">Lv: 8.20%</div>
-            <div class="option lvEnemey">Lv: 8.30%</div>
+            <!-- <div class="option lvMe none">Lv: 8.20%</div>
+            <div class="option lvEnemey none">Lv: 8.30%</div> -->
+            <div id="EXP1" class="option lvMe none">LV 0 (81%)</div>
+            <div id="EXP2" class="option lvEnemey none">LV 0 (81%)</div>
     
-            <div class="option GiapMe" style="
-        line-height: 60px;
-        height: 60px;
-        min-width: 197px;
-        right: 11px;
-        bottom: 309px;
-        font-size: 34px;
-    ">2000 X</div>
-            <div class="option GiapEnemey">30 000 X</div>
+            <div class="option GiapMe none" id="SHIELD1">2000 X</div>
+            <div class="option GiapEnemey none" id="SHIELD2">30 000 X</div>
             
             
-            <div class="option optionButton outGame">Đầu Hàng</div>
-            <div class="option optionButton Skill">Tùy Chọn</div> -->
+            <div class="option optionButton none outGame">Đầu Hàng</div>
+            <div class="option optionButton none Skill">Tùy Chọn</div> 
     
             <!-- <div class="option"><span class="namee">Tùy Chọn</span></div>
-            <div class="option"><span class="namee">Mục Tiêu</span></div> -->
+            <div class="option"><span class="namee">Mục Tiêu</span></div>-->
             
 
-            <!-- <div id="board"></div> -->
+
+            <div class= "board none" id="board"></div>
+            <div class="option none mePosition">
+                <div class="meMe meBoard"></div>
+            </div>
+            <div class="option none enemyPosition">
+                <div class="meMe enemyBoard"></div>
+            </div>
+
+            <!-- end bảng cờ -->
             <div class="option optionLocation1">Chọn</div>
             <div class="option optionLocation2">Đổi</div>
             <div class="infor">
@@ -114,6 +115,8 @@
         
         
             <div class="keyBoard">
+                <div class="ac none">Tấn công (<span class="acc"></span>)</div>
+                <div class="ad none">Đổi</div>
                 <div class="aa focusKey none">Vào</div>
                 <div class="phím-lên upKey focusKey">LÊN</div>
                 <div class="phím-xuống downKey  focusKey">XUỐNG</div>
@@ -127,9 +130,17 @@
     </div>
 </div>
 </body>
+<!-- <script src="Matrix/Diamon.js" lang="javascript"></script>
+<script src="Matrix/Special_Efffect.js" lang="javascript"></script>
+<script src="Matrix/Record.js" lang="javascript"></script> -->
 <script src="asset/javascript/map.js"></script>
 
 <script src="asset/javascript/style.js"></script>
 <script src="asset/javascript/khoa.js"></script>
 <script src="asset/javascript/script.js"></script>
+
+
+
+
+
 </html>
