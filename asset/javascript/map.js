@@ -27,35 +27,7 @@ function Map(name, width, height, top, left) {
     this.grossTop = function(yy) {
         mapp.style.top = yy + 'px'
     }
-    // // hàm cho map, khi nhân vật qua phải
-    // this.moveRight = function () {
-    //     left -= 1.35
-    //     this.left = left
-    //     mapp.style.left = left + '%'
-    // }
 
-    // // hàm cho map, khi nhân vật qua trái
-    // this.moveLeft = function () {
-    //     left += 1.35
-    //     this.left = left
-    //     mapp.style.left = left + '%'
-    // }
-
-
-    // this.moveTop = function () {
-    //     top += 1.1565
-    //     this.top = top
-        
-    //     mapp.style.top = top + '%'
-        
-    // }
-    // this.moveBottom = function () {
-    //     top -= 1.1565
-    //     this.top = top
-        
-    //     mapp.style.top = top + '%'
-        
-    // }
 
       // hàm cho map, khi nhân vật qua phải
     this.moveRight = function () {
