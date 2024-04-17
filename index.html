@@ -922,7 +922,838 @@
 
 <script>
 
+{
+    
 
+// map
+{
+    var mapBassic = [
+        // '#00bbff96'
+        ['68', '61', '', '0', '0', '#00bbff96', 'blue', 'red', "pink", 'brown'],
+        [['3', '3', "exit1", '1', '32', 'black'], ['3', '3', "exit2", '56', '30', 'black'], ['3', '3', "exit3", '26', '63', 'black']]
+
+    ]
+
+    var mapBassic = [
+        // '#00bbff96'
+        ['68', '61', '', '0', '0', '#00bbff96', 'blue', 'red', "pink", 'brown'],
+        [['3', '3', "exit1", '1', '32', 'black'], ['3', '3', "exit2", '56', '30', 'black'], ['3', '3', "exit3", '26', '63', 'black']]
+
+    ]
+
+
+    var vitriMap = 0
+    function createMap(width, height, name, top, left, color) {
+
+        if (name == '') {
+            var map = document.createElement('div')
+            map.classList.add('map')
+            var fullclassApp = document.querySelector(".body")
+            fullclassApp.append(map);
+
+            // -----------
+            var miniMap = document.createElement('div')
+            miniMap.classList.add('miniM')
+            var fullclassApp2 = document.querySelector(".miniMap")
+            fullclassApp2.append(miniMap);
+
+            var khungMap = document.createElement('div')
+            khungMap.classList.add('khungMap')
+            var fullclassApp3 = document.querySelector(".miniMap")
+            fullclassApp3.append(khungMap);
+
+            // -----------
+            this.transMap = function (b) {
+                if (b == 1 || b == 3) {
+                    map.style.height = this.height + 'rem'
+                    map.style.width = this.width + 'rem'
+
+                    miniMap.style.height = this.height2 + 'rem'
+                    miniMap.style.width = this.width2 + 'rem'
+
+
+                } else if (b == 2 || b == 4) {
+
+                    map.style.height = this.width + 'rem'
+                    map.style.width = this.height + 'rem'
+
+                    miniMap.style.height = this.width2 + 'rem'
+                    miniMap.style.width = this.height2 + 'rem'
+                }
+            }
+
+            miniMap.style.width = width / 5 + 'rem'
+            miniMap.style.height = height / 5 + 'rem'
+            miniMap.style.top = top / 5 + 'rem'
+            miniMap.style.left = left / 5 + 'rem'
+
+            miniMap.style.backgroundColor = color
+
+
+
+
+        } else {
+            var map = document.createElement('div')
+            map.classList.add('itemMap')
+            map.classList.add(name)
+            var fullclassApp = document.querySelector(".map")
+            fullclassApp.append(map);
+
+
+            var miniExit = document.createElement('div')
+            miniExit.classList.add('miniExit')
+            var fullclassApp4 = document.querySelector(".miniM")
+            fullclassApp4.append(miniExit);
+
+            miniExit.style.width = 1 + 'rem'
+            miniExit.style.height = 1 + 'rem'
+            miniExit.style.top = top / 5 + 'rem'
+            miniExit.style.left = left / 5 + 'rem'
+
+            miniExit.style.backgroundColor = color
+
+            this.transMap = function (b, c, cc) {
+
+                if (b == 1) {
+                    map.style.top = this.top + 'rem'
+                    map.style.left = this.left + 'rem'
+
+                    miniExit.style.top = this.top2 + 'rem'
+                    miniExit.style.left = this.left2 + 'rem'
+                    vitriMap = 1
+                } else if (b == 2) {
+                    map.style.top = this.left + 'rem'
+                    map.style.left = c - this.height - this.top + 'rem'
+
+                    miniExit.style.top = this.left2 + 'rem'
+                    miniExit.style.left = c / 5 - this.height2 - this.top2 + 'rem'
+                    vitriMap = 2
+                } else if (b == 3) {
+                    map.style.top = c - this.height - this.top + 'rem'
+                    map.style.left = cc - this.width - this.left + 'rem'
+
+                    miniExit.style.top = c / 5 - this.height2 - this.top2 + 'rem'
+                    miniExit.style.left = cc / 5 - this.width2 - this.left2 + 'rem'
+                    vitriMap = 3
+                } else if (b == 4) {
+                    map.style.top = c - this.width - this.left + 'rem'
+                    map.style.left = this.top + 'rem'
+
+                    miniExit.style.top = c / 5 - this.width2 - this.left2 + 'rem'
+                    miniExit.style.left = this.top2 + 'rem'
+                    vitriMap = 4
+                }
+            }
+        }
+        this.height = height
+        this.width = width
+        this.top = top
+        this.left = left
+
+        this.height2 = height / 5
+        this.width2 = width / 5
+        this.top2 = top / 5
+        this.left2 = left / 5
+        // map.style.width = width + 'px'
+        // map.style.height = height + 'px'
+        map.style.width = width + 'rem'
+        map.style.height = height + 'rem'
+        map.style.top = top + 'rem'
+        map.style.left = left + 'rem'
+
+        map.style.backgroundColor = color
+        // 2.1 hàm lấy giá trị top
+        this.topp = function () {
+            return Number(map.style.top.slice(0, -3))
+        }
+        // 2.2 hàm lấy giá trị left
+        this.leftt = function () {
+            return Number(map.style.left.slice(0, -3))
+        }
+
+
+
+        // hàm cho map, khi nhân vật qua phải
+        this.moveRight = function () {
+            var leftt = this.left()
+            leftt -= 9
+            map.style.left = leftt + 'px'
+        }
+
+        // hàm cho map, khi nhân vật qua trái
+        this.moveLeft = function () {
+            var leftt = this.left()
+            leftt += 9
+            map.style.left = leftt + 'px'
+        }
+
+
+        this.moveTop = function () {
+            var topp = this.top()
+            topp += 9
+            map.style.top = topp + 'px'
+
+
+        }
+        this.moveBottom = function () {
+            var topp = this.top()
+            topp -= 9
+            map.style.top = topp + 'px'
+
+        }
+
+    }
+
+    // nhân vật
+    function nhanvat(widthDe, heightDe, topDe, leftDe,
+        widthKhung, heightKhung, bottomKhung, widthAnh, heightAnh, topAnh, leftAnh,
+        name, numberName, textMons, classMons) {
+
+
+        // xây nền
+        {
+            var de = document.createElement('div')
+            de.classList.add('divDe')
+            if (name == 'me') {
+                de.classList.add(name)
+            } else {
+                de.classList.add("X" + numberName)
+            }
+            var map = document.querySelector(".map") //gọi biến qua Dom
+            map.append(de);
+
+            var khung = document.createElement('div')
+            khung.classList.add('divKhung')
+            de.append(khung);
+
+            var anh = document.createElement('div')
+            anh.classList.add('divAnh')
+            khung.append(anh);
+            var nameBox = document.createElement('div')
+            nameBox.classList.add('nameBoxDe')
+            nameBox.innerHTML = name
+            de.append(nameBox);
+
+
+            de.style.width = widthDe + 'rem'
+            de.style.height = heightDe + 'rem'
+            de.style.top = topDe + 'rem'
+            de.style.left = leftDe + 'rem'
+
+            khung.style.background = 'none'
+            khung.style.width = widthKhung + 'rem'
+            khung.style.height = heightKhung + 'rem'
+            khung.style.bottom = bottomKhung + 'rem'
+
+            anh.style.backgroundColor = 'none'
+            anh.style.width = widthAnh + 'rem'
+            anh.style.height = heightAnh + 'rem'
+            anh.style.top = topAnh + 'rem'
+            anh.style.left = leftAnh + 'rem'
+
+
+            this.widthDe = widthDe
+            this.heightDe = heightDe
+            this.widthKhung = widthKhung
+            this.heightKhung = heightKhung
+            // this.nameChar = name
+            this.numberName = numberName
+
+            // if (numberName != 0) {
+
+            // }
+            this.topp = function () {
+                return Number(de.style.top.slice(0, -3))
+            }
+            // 2.2 hàm lấy giá trị left
+            this.leftt = function () {
+                return Number(de.style.left.slice(0, -3))
+            }
+            // background
+            this.backgroundImage = function (src, po, re, size) {  //hàm đổi màu nền
+                anh.style.backgroundImage = src
+                anh.style.backgroundPosition = po
+                anh.style.backgroundRepeat = re
+                anh.style.backgroundSize = size
+
+            }
+            // 1, mapp.height, map.width, z
+            this.transMap = function (b, c, cc, ccc) {
+
+                if (b == 1) {
+                    console.log("wrong")
+                    if (ccc == 2) {
+                        var a = this.topp()
+                        // console.log(c, this.widthDe / 2, this.heightDe / 2)
+                        de.style.top = c - this.leftt() - this.widthDe / 2 - this.heightDe / 2 + 'rem'
+                        de.style.left = a + this.heightDe / 2 - this.widthDe / 2 + 'rem'
+                    }
+                    else if (ccc == 3) {
+                        // console.log(c, cc, this.widthDe, this.heightDe, this.leftt())
+                        de.style.top = c - this.topp() - this.heightDe + 'rem'
+                        de.style.left = cc - this.widthDe - this.leftt() + 'rem'
+
+                    }
+                    else if (ccc == 4) {
+                        var a = this.topp()
+                        // console.log(c, this.widthDe / 2, this.heightDe / 2)
+                        de.style.top = this.leftt() + this.widthDe / 2 - this.heightDe / 2 + 'rem'
+                        de.style.left = cc - a - this.heightDe / 2 - this.widthDe / 2 + 'rem'
+
+                    }
+
+                } else if (b == 2) {
+                    if (ccc == 1) {
+                        var a = this.topp()
+                        de.style.top = this.leftt() + this.widthDe / 2 - this.heightDe / 2 + 'rem'
+                        de.style.left = c - a - this.heightDe / 2 - this.widthDe / 2 + 'rem'
+                    } else {
+                        this.transMap(1, mapp.height, mapp.width, z)
+                        var a = this.topp()
+                        de.style.top = this.leftt() + this.widthDe / 2 - this.heightDe / 2 + 'rem'
+                        de.style.left = c - a - this.heightDe / 2 - this.widthDe / 2 + 'rem'
+                    }
+                } else if (b == 3) {
+
+                    if (ccc == 1) {
+                        de.style.top = c - this.topp() - this.heightDe + 'rem'
+                        de.style.left = cc - this.leftt() - this.widthDe + 'rem'
+                    } else {
+                        this.transMap(1, mapp.height, mapp.width, z)
+                        de.style.top = c - this.topp() - this.heightDe + 'rem'
+                        de.style.left = cc - this.leftt() - this.widthDe + 'rem'
+                    }
+                } else if (b == 4) {
+
+                    if (ccc == 1) {
+                        var a = this.topp()
+                        console.log(cc, this.leftt(), this.widthDe / 2, this.heightDe / 2)
+                        de.style.top = cc - this.leftt() - this.widthDe / 2 - this.heightDe / 2 + 'rem'
+                        de.style.left = a + this.heightDe / 2 - this.widthDe / 2 + 'rem'
+
+                    } else {
+                        this.transMap(1, mapp.height, mapp.width, z)
+                        var a = this.topp()
+
+                        de.style.top = cc - this.leftt() - this.widthDe / 2 - this.heightDe / 2 + 'rem'
+                        de.style.left = a + this.heightDe / 2 - this.widthDe / 2 + 'rem'
+
+                    }
+                }
+            }
+
+        }
+    }
+}
+// map. me và exit và quái
+{
+    var mapp = 0, me = 0
+    var exit1, exit2, exit3, exit4, exit5, exit6, exit7, exit8, exit9, exit10
+    var exitArray = [exit1, exit2, exit3, exit4, exit5, exit6, exit7, exit8, exit9, exit10]
+    var exitArrayOfficial = []
+
+    var quai1, quai2, quai3, quai4, quai5, quai6, quai7, quai8, quai9, quai10
+    var quaiArray = [quai1, quai2, quai3, quai4, quai5, quai6, quai7, quai8, quai9, quai10]
+    var quaiArrayOfficial = []
+}
+var vitri1 = 0
+function startMap() {
+    
+    mapp = new createMap(mapBassic[0][0], mapBassic[0][1], mapBassic[0][2], mapBassic[0][3], mapBassic[0][4], mapBassic[0][5])
+    for (var i = 0; i < mapBassic[1].length; i++) {
+        exitArray[i] = new createMap(mapBassic[1][i][0], mapBassic[1][i][1], mapBassic[1][i][2], mapBassic[1][i][3], mapBassic[1][i][4], mapBassic[1][i][5])
+        exitArrayOfficial.push(exitArray[i])
+    }
+    vitriMap = 1
+    document.querySelector(".upKey2").classList.add("colorButton")
+
+
+    // nhân vật
+    me = new  nhanvat(2.88, 1.6, 10, 0,      3, 4.7, 0.8,      9, 10, -3, -3,    'me')
+    me.backgroundImage("url('https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/me.png?raw=true')", '38px 51px', 'no-repeat', '4.5rem')
+
+    
+    for (var i = 0; i < quaiArray.length; i++) {
+        var a = Math.floor(Math.random() * (randomTopLeft(mapp, me)[0] + 1))
+        var b = Math.floor(Math.random() * (randomTopLeft(mapp, me)[1] + 1))
+        quaiArray[i] = new nhanvat(2.88, 1.6, a, b,      3, 4.7, 0.8,      9, 10, -3, -3, 'Quái Vật ' + (i + 1), (i + 1))
+        quaiArrayOfficial.push(quaiArray[i])
+        quaiArray[i].backgroundImage("url('https://github.com/kun18911/gameBenhVienQuyDu/blob/main/asset/img/they.png?raw=true')", '30px 50px', 'no-repeat', '5.1rem')
+    }
+}
+
+function randomTopLeft(x, y) {
+    // top 
+    return [Math.floor(x.height - y.heightDe / 2 - y.heightKhung), Math.floor(x.width - y.widthDe)]
+}
+
+
+
+    
+// phím bấm đổi map 
+{
+
+    function cancellColor() {
+        document.querySelector(".upKey2").classList.remove("colorButton")
+        document.querySelector(".downKey2").classList.remove("colorButton")
+        document.querySelector(".leftKey2").classList.remove("colorButton")
+        document.querySelector(".rightKey2").classList.remove("colorButton")
+    }
+    document.querySelector(".rightKey2").addEventListener("click", rightMap)
+    function rightMap() {
+        if (vitriMap != 2) {
+            z = vitriMap
+            cancellColor()
+            document.querySelector(".rightKey2").classList.add("colorButton")
+            mapp.transMap(2)
+            for (var i = 0; i < exitArrayOfficial.length; i++) {
+                exitArrayOfficial[i].transMap(2, mapp.height)
+            }
+
+            me.transMap(2, mapp.height, mapp.width, z)
+            for (var i = 0; i < quaiArrayOfficial.length; i++) {
+                quaiArrayOfficial[i].transMap(2, mapp.height, mapp.width, z)
+            }
+        }
+    }
+    
+    document.querySelector(".leftKey2").addEventListener("click", leftMap)
+    function leftMap() {
+        if (vitriMap != 4) {
+            z = vitriMap
+            cancellColor()
+            document.querySelector(".leftKey2").classList.add("colorButton")
+            mapp.transMap(4)
+            for (var i = 0; i < exitArrayOfficial.length; i++) {
+                exitArrayOfficial[i].transMap(4, mapp.width)
+            }
+
+            me.transMap(4, mapp.height, mapp.width, z)
+            for (var i = 0; i < quaiArrayOfficial.length; i++) {
+                quaiArrayOfficial[i].transMap(4, mapp.height, mapp.width, z)
+            }
+        }
+    }
+    
+    document.querySelector(".downKey2").addEventListener("click", downMap)
+    function downMap() {
+        if (vitriMap != 3) {
+            z = vitriMap
+            cancellColor()
+            document.querySelector(".downKey2").classList.add("colorButton")
+            mapp.transMap(3)
+            for (var i = 0; i < exitArrayOfficial.length; i++) {
+                exitArrayOfficial[i].transMap(3, mapp.height, mapp.width)
+                // c, cc
+            }
+            me.transMap(3, mapp.height, mapp.width, z)
+            for (var i = 0; i < quaiArrayOfficial.length; i++) {
+                quaiArrayOfficial[i].transMap(3, mapp.height, mapp.width, z)
+            }
+        }
+    }
+    
+    document.querySelector(".upKey2").addEventListener("click", upMap)
+    function upMap() {
+        if (vitriMap != 1) {
+            // clearInterval(vitri1)
+            z = vitriMap
+            cancellColor()
+            document.querySelector(".upKey2").classList.add("colorButton")
+            mapp.transMap(1)
+            for (var i = 0; i < exitArrayOfficial.length; i++) {
+                exitArrayOfficial[i].transMap(1)
+            }
+            me.transMap(1, mapp.height, mapp.width, z)
+            for (var i = 0; i < quaiArrayOfficial.length; i++) {
+                quaiArrayOfficial[i].transMap(1, mapp.height, mapp.width, z)
+            }
+
+        }
+    }
+}
+
+// nhân vật di chuyển
+{
+    var topMe, leftMe
+    var numGo = 0.13
+    // var y = Math.floor(heightScreen - me.height)
+    // var z = Math.floor(widthScreen - me.width)
+    // 3.1 nút đi xuống
+    var numRun = 0
+    var id
+    function moveBottomButton() {
+
+        numRun++
+        if (vitriMap != 0) {
+            if (numRun == 1) {
+                id = setInterval(function () {
+                    topMe = me.topp()
+                    topMe += numGo
+                    document.querySelector(".me").style.top = topMe + 'rem'
+                    screenMe()
+                    if (topMe + me.heightDe > mapp.height) {
+                        document.querySelector(".me").style.top = mapp.height - me.heightDe - 0.2 + 'rem'
+                        clearInterval(id); numRun = 0
+                    }
+                }, 25)
+            } else {
+                clearInterval(id); numRun = 0
+            }
+        }
+    }
+    document.querySelector(".downKey").addEventListener('click', moveBottomButton)
+
+    function moveLeftButton() {
+
+        numRun++
+        if (vitriMap != 0) {
+            if (numRun == 1) {
+                id = setInterval(function () {
+                    leftMe = me.leftt()
+                    leftMe -= numGo
+                    document.querySelector(".me").style.left = leftMe + 'rem'
+                    screenMe()
+                    // if (leftMe - me.heightKhung - me.heightDe / 2 < 0) {
+                    if (leftMe < 0) {
+                        document.querySelector(".me").style.left = 0 + 'rem'
+                        clearInterval(id); numRun = 0
+                    }
+                }, 25)
+            } else {
+                clearInterval(id); numRun = 0
+            }
+        }
+    }
+    document.querySelector(".leftKey").addEventListener('click', moveLeftButton)
+
+
+    function moveRightButton() {
+
+        numRun++
+        if (vitriMap != 0) {
+            if (numRun == 1) {
+                id = setInterval(function () {
+                    leftMe = me.leftt()
+                    leftMe += numGo
+                    document.querySelector(".me").style.left = leftMe + 'rem'
+                    screenMe()
+                    if (leftMe + me.widthDe > mapp.width) {
+                        document.querySelector(".me").style.left = mapp.width - me.widthDe - 0.06 + 'rem'
+                        clearInterval(id); numRun = 0
+                    }
+                }, 25)
+            } else {
+                clearInterval(id); numRun = 0
+            }
+        }
+    }
+    document.querySelector(".rightKey").addEventListener('click', moveRightButton)
+
+
+    function moveTopButton() {
+
+        numRun++
+        if (vitriMap != 0) {
+            if (numRun == 1) {
+                id = setInterval(function () {
+                    topMe = me.topp()
+                    topMe -= numGo
+                    document.querySelector(".me").style.top = topMe + 'rem'
+                    screenMe()
+
+                    // sai
+                    // if (leftMe - me.heightKhung - me.heightDe / 2 < 0) {
+                    if (topMe < me.heightKhung - me.heightDe / 2) {
+                        document.querySelector(".me").style.top = me.heightKhung - me.heightDe / 2 + 'rem'
+                        clearInterval(id); numRun = 0
+                    }
+                }, 25)
+            } else {
+                clearInterval(id); numRun = 0
+            }
+        }
+    }
+    document.querySelector(".upKey").addEventListener('click', moveTopButton)
+
+
+
+
+    function screenMe() {
+
+        var widthS = (document.querySelector(".screen").style.width.slice(0, -3) - me.widthDe) / 2
+        var heightS = (document.querySelector(".screen").style.height.slice(0, -3) - me.heightDe) / 2
+        if (me.leftt() >= widthS && mapp.width - me.leftt() - me.widthDe >= widthS) {
+            document.querySelector(".map").style.left = - (me.leftt() - widthS) + 'rem'
+        } else if (me.leftt() < widthS) {
+
+            document.querySelector(".map").style.left = 0 + 'rem'
+        } else if (mapp.width - me.leftt() - me.widthDe < widthS) {
+            document.querySelector(".map").style.left = - (mapp.width - Number(document.querySelector(".screen").style.width.slice(0, -3))) + 'rem'
+        }
+
+
+        if (me.topp() >= heightS && mapp.height - me.topp() - me.heightDe >= heightS) {
+            document.querySelector(".map").style.top = - (me.topp() - heightS) + 'rem'
+        } else if (me.topp() < heightS) {
+            document.querySelector(".map").style.top = 0 + 'rem'
+        } else if (mapp.height - me.topp() - me.heightDe < heightS) {
+            document.querySelector(".map").style.top = - (mapp.height - Number(document.querySelector(".screen").style.height.slice(0, -3))) + 'rem'
+        }
+
+
+       
+    }
+}
+var b, zz = 4
+var monsterBreak = []
+function findMotOrNhieu() {
+    b = setInterval(function() {
+        monsterBreak = []
+        for (var i = 0; i < quaiArrayOfficial.length; i++) {
+            if (quaiArrayOfficial[i].leftt() - me.leftt() - me.widthDe <= zz && me.leftt() - quaiArrayOfficial[i].leftt() - quaiArrayOfficial[i].widthDe <= zz && me.topp() - quaiArrayOfficial[i].topp() - quaiArrayOfficial[i].heightDe <= zz && quaiArrayOfficial[i].topp() - me.topp() - me.heightDe <= zz) {
+                monsterBreak.push(quaiArrayOfficial[i])
+            }
+        }
+
+        if (monsterBreak.length == 1) {
+            document.querySelector(".tancong1Dich").classList.remove("none")
+            document.querySelector(".tancong1Dich_Number").innerHTML = monsterBreak[0].numberName
+            // ----
+            document.querySelector(".doiDich").classList.add("none")
+            document.querySelector(".tancongDaDich").classList.add("none")
+        } 
+        else if (monsterBreak.length > 1) {
+            document.querySelector(".tancong1Dich").classList.add("none")
+            // ----
+            document.querySelector(".doiDich").classList.remove("none")
+            // document.querySelector(".tancongDaDich").classList.remove("none")
+        } 
+        else {
+            document.querySelector(".tancong1Dich").classList.add("none")
+            document.querySelector(".doiDich").classList.add("none")
+            document.querySelector(".tancongDaDich").classList.add("none")
+        }
+    },20)
+}
+
+var iDoi = 0
+var cDoi = 0, testDoiDich = 0, cz = 0, czz
+function clickDoiDich() {
+    if (!document.querySelector(".doiDich").classList.contains("none") && monsterBreak.length > 1) {
+        
+        document.querySelector(".tancongDaDich").classList.remove("none")
+        if (iDoi + 1 <= monsterBreak.length) {
+            document.querySelector(".tancongDaDich_Number").innerHTML = monsterBreak[iDoi].numberName
+            iDoi++
+        } else {
+            iDoi = 0
+            document.querySelector(".tancongDaDich_Number").innerHTML = monsterBreak[iDoi].numberName
+            iDoi++
+        }
+    }
+
+    if (testDoiDich == 0) {
+        testDoiDich++
+        cz = setInterval(function() {
+            if (!document.querySelector(".tancongDaDich").classList.contains("none")) {
+                if (monsterBreak.length < 2) {
+                    document.querySelector(".tancongDaDich").classList.add("none")
+                } else {
+                    for (var i = 0; i < monsterBreak.length; i++) {
+                        if (monsterBreak[i].numberName == Number(document.querySelector(".tancongDaDich_Number").innerHTML)) {
+                            cDoi ++
+                        } 
+                    }
+                    if (cDoi == 0) {
+                        if (monsterBreak.length > 1) {
+                            clickDoiDich()
+                        }
+                    }
+                    cDoi = 0
+    
+                }
+    
+            }
+        },20)
+    }
+}
+document.querySelector(".doiDich").addEventListener("click", clickDoiDich)
+
+
+
+
+
+function fightMot() {
+    document.querySelector(".keyBoard").classList.add("none")
+    document.querySelector(".keyBoard2").classList.add("none")
+    document.querySelector(".miniMap").classList.add("none")
+    document.querySelector(".haha").classList.add("none")
+
+
+    clearInterval(b)
+    if (cz != 0) {clearInterval(cz); testDoiDich == 0}
+    document.querySelector(".tancong1Dich").classList.add("none")
+    document.querySelector(".doiDich").classList.add("none")
+    document.querySelector(".tancongDaDich").classList.add("none")
+
+
+    document.querySelector(".infor_battle").classList.remove("none")
+    
+
+    startGame()
+    if (checkValid()) {
+        chiso()
+        // setTimeout(function () { readycrush(); }, 1000)
+    }
+    czz = setInterval(function() {
+        if (document.querySelector(".hpEnemy1").innerHTML < 0 || document.querySelector(".hpMe1").innerHTML < 0) {
+            document.querySelector(".keyBoard").classList.remove("none")
+            document.querySelector(".keyBoard2").classList.remove("none")
+            document.querySelector(".miniMap").classList.remove("none")
+            document.querySelector(".haha").classList.remove("none")
+
+            clearInterval(timeTogether)
+            meTurn = false
+        theyTurn = false
+        timeEnemyPlay = 0
+        timePlay = 0
+
+        specialFirstArray = []
+
+        listOfArrays = [];
+        listOfArraysC = []
+        diSlide = true
+    
+    
+        tiep = 0
+        dayTh = 0
+    
+        specialArraymini = []
+    
+        slide5 = false
+    
+        specialArraymini2 = []
+    
+        yyy = 0
+        tiPlay = 0
+        click1 = true
+        click2 = true
+        board = []
+          clearInterval(slideLoop)  
+          
+          clearInterval(czz)  
+    document.querySelector(".infor_battle").classList.add("none")
+        }
+    },30)
+
+    
+}
+document.querySelector(".tancong1Dich").addEventListener("click", fightMot)
+document.querySelector(".tancongDaDich").addEventListener("click", clickDoiDich)
+
+
+function chiso() {
+    document.querySelector(".hpEnemy1").innerHTML = 200
+    document.querySelector(".hpEnemy2").innerHTML = 200
+
+    document.querySelector(".hpMe1").innerHTML = 200
+    document.querySelector(".hpMe2").innerHTML = 200
+
+    document.querySelector(".manaMe2").innerHTML = 200
+    document.querySelector(".manaEnemy2").innerHTML = 200
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ?
+{
+    var vvvleft, vvvtop
+// function miniMap(width, height, name, top, left, color) {
+//     if (name == '') {
+//         var miniMap = document.createElement('div')
+//         miniMap.classList.add('miniMap')
+//         var fullclassApp = document.querySelector(".miniMap") 
+//         fullclassApp.append(miniMap); 
+    
+//         // this.transMap = function(b) {
+//         //     if (b == 1 || b == 3) {
+//         //         map.style.height = this.height + 'rem'
+//         //         map.style.width = this.width + 'rem'
+//         //     } else if (b == 2 || b == 4) {
+                
+//         //         map.style.height = this.width + 'rem'
+//         //         map.style.width = this.height + 'rem'
+//         //     } 
+//         // }
+//     }
+
+//       // map.styule
+//       this.height = height / 10
+//       this.width = width / 10
+//       this.top = top / 10
+//       this.left = left / 10
+//       // map.style.width = width / 10 + 'px'
+//       // map.style.height = height / 10 + 'px'
+//       miniMap.style.width = width / 10 + 'rem'
+//       miniMap.style.height = height / 10 + 'rem'
+//       miniMap.style.top = top / 10 + 'rem'
+//       miniMap.style.left = left / 10 + 'rem'
+
+//       miniMap.style.backgroundColor = color
+//      // 2.1 hàm lấy giá trị top
+//      this.topp = function () {
+//        return Number(map.style.top.slice(0, -3))
+//    }
+//    // 2.2 hàm lấy giá trị left
+//    this.leftt = function () {
+//        return Number(map.style.left.slice(0, -3))
+//    }
+// }
+
+}
+
+
+
+}
 const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     document.querySelector(".wrap").style.width = windowWidth + 'px'
