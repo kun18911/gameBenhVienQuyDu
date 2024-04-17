@@ -921,6 +921,29 @@
 </body>
 
 <script>
+
+
+const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    document.querySelector(".wrap").style.width = windowWidth + 'px'
+    document.querySelector(".wrap").style.height = windowHeight + 'px'
+  
+    // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
+    // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
+    document.documentElement.style.fontSize = Number(document.querySelector(".wrap").style.width.slice(0, -2)) / 15 + 'px'
+
+    document.querySelector(".screen").style.width = 14.2 + 'rem'
+    document.querySelector(".screen").style.height = 29.8 +'rem'
+    document.querySelector(".body").style.width = 14.2 + 'rem'
+    document.querySelector(".body").style.height = 29.8 +'rem'
+
+    var element = document.querySelector(".keyBoard")
+    element.style.pointerEvents = "auto";
+
+    var element = document.querySelector(".keyBoard2")
+    element.style.pointerEvents = "auto";
+    var element = document.querySelector(".infor_battle")
+    element.style.pointerEvents = "auto";
     document.querySelector(".haha").addEventListener("click", function() {
     fightMot()
     var zeroArray = [document.getElementById("0-*0"), document.getElementById("0-*1"), document.getElementById("0-*2"), document.getElementById("0-*3"), document.getElementById("0-*4"), document.getElementById("0-*5"), document.getElementById("0-*6"), document.getElementById("0-*7"), document.getElementById("0-*8")]
@@ -980,6 +1003,7 @@ if (1) {
         var blank = 'https://github.com/ImKennyYip/candy-crush/blob/master/images/blank.png?raw=true'
 
     }
+
 
     //     // ----------------
 
