@@ -30,6 +30,12 @@
             position: absolute;
             background-color: blue;
         }
+        .i4 {
+    z-index: 4 ;
+}
+.doiMauTime {
+    background-color: #009bff !important;
+}
     
         .box1 {
             width: 60px;
@@ -1754,19 +1760,17 @@ function chiso() {
 
 
 }
-const windowWidth = window.innerWidth;
+    const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     document.querySelector(".wrap").style.width = windowWidth + 'px'
     document.querySelector(".wrap").style.height = windowHeight + 'px'
-  
-    // document.querySelector(".wrap").style.width = window.innerWidth + 'px'
-    // document.querySelector(".wrap").style.height = window.innerHeight + 'px'
-    document.documentElement.style.fontSize = Number(document.querySelector(".wrap").style.width.slice(0, -3)) / 15 + 'px'
+
+    var y = document.documentElement.style.fontSize = Number(document.querySelector(".wrap").style.width.slice(0, -2)) / 15 + 'px'
 
     document.querySelector(".screen").style.width = 14.2 + 'rem'
-    document.querySelector(".screen").style.height = Number( document.querySelector(".wrap").style.height.slice(0,-2)) * 15 / Number( document.querySelector(".wrap").style.width.slice(0,-2)) - 0.8 +'rem'
+    document.querySelector(".screen").style.height = Number(document.querySelector(".wrap").style.height.slice(0, -2)) * 15 / Number(document.querySelector(".wrap").style.width.slice(0, -2)) - 0.8 + 'rem'
     document.querySelector(".body").style.width = 14.2 + 'rem'
-    document.querySelector(".body").style.height = Number( document.querySelector(".wrap").style.height.slice(0,-2)) * 15 / Number( document.querySelector(".wrap").style.width.slice(0,-2)) - 0.8  +'rem'
+    document.querySelector(".body").style.height = Number(document.querySelector(".wrap").style.height.slice(0, -2)) * 15 / Number(document.querySelector(".wrap").style.width.slice(0, -2)) - 0.8 + 'rem'
 
     var element = document.querySelector(".keyBoard")
     element.style.pointerEvents = "auto";
